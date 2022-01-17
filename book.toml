@@ -1,0 +1,29 @@
+[book]
+authors = ["Moenarch"]
+language = "en"
+src = "src"
+title = "Tractatus Logico-Philosophicus"
+
+[output.html]
+mathjax-support = true
+git-repository-url = "https://github.com/moenarch/wittgenstein-tractatus-logico-philosophicus/tree/main"
+edit-url-template = "https://github.com/moenarch/wittgenstein-tractatus-logico-philosophicus/edit/main/{path}"
+
+[output.html.fold]
+enable = true
+
+[output.html.playground]
+editable = true
+line-numbers = true
+
+[output.html.search]
+limit-results = 50
+use-boolean-and = true
+boost-title = 2
+boost-hierarchy = 2
+boost-paragraph = 1
+expand = true
+heading-split-level = 2
+
+[output.html.redirect]
+"/format/config.html" = "configuration/index.html"
