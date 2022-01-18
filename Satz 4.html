@@ -1,0 +1,629 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Satz 4 - Tractatus Logico-Philosophicus</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><a href="Vorwort.html">Vorwort</a></li><li class="spacer"></li><li class="chapter-item "><a href="Satz 1.html"><strong aria-hidden="true">1.</strong> Satz 1</a></li><li class="chapter-item "><a href="Satz 2.html"><strong aria-hidden="true">2.</strong> Satz 2</a></li><li class="chapter-item "><a href="Satz 3.html"><strong aria-hidden="true">3.</strong> Satz 3</a></li><li class="chapter-item expanded "><a href="Satz 4.html" class="active"><strong aria-hidden="true">4.</strong> Satz 4</a></li><li class="chapter-item "><a href="Satz 5.html"><strong aria-hidden="true">5.</strong> Satz 5</a></li><li class="chapter-item "><a href="Satz 6.html"><strong aria-hidden="true">6.</strong> Satz 6</a></li><li class="chapter-item "><a href="Satz 7.html"><strong aria-hidden="true">7.</strong> Satz 7</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Tractatus Logico-Philosophicus</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/moenarch/wittgenstein-tractatus-logico-philosophicus/tree/main" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/moenarch/wittgenstein-tractatus-logico-philosophicus/edit/main/src/Satz 4.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="vierter-satz"><a class="header" href="#vierter-satz">Vierter Satz</a></h1>
+<p>Der Gedanke ist der sinnvolle Satz.</p>
+<p><strong>4.001</strong>
+Die Gesamtheit der Sätze ist die Sprache.</p>
+<p><strong>4.002</strong>
+Der Mensch besitzt die Fähigkeit Sprachen zu bauen, womit sich jeder Sinn ausdrücken lässt, ohne eine Ahnung davon zu haben, wie und was jedes Wort bedeutet. -
+Wie man auch spricht, ohne zu wissen, wie die einzelnen Laute hervorgebracht werden.<br />
+Die Umgangssprache ist ein Teil des menschlichen Organismus und nicht weniger kompliziert als dieser.<br />
+Es ist menschenunmöglich, die Sprachlogik aus ihr unmittelbar zu entnehmen.<br />
+Die Sprache verkleidet den Gedanken.
+Und zwar so, dass man nach der äußeren Form des Kleides, nicht auf die Form des bekleideten Gedankens schließen kann; weil die äußere Form des Kleides nach ganz anderen Zwecken gebildet ist als danach, die Form des Körpers erkennen zu lassen.<br />
+Die stillschweigenden Abmachungen zum Verständnis der Umgangssprache sind enorm kompliziert.</p>
+<p><strong>4.003</strong>
+Die meisten Sätze und Fragen, welche über philosophische Dinge geschrieben worden sind, sind nicht falsch, sondern unsinnig.
+Wir können daher Fragen dieser Art überhaupt nicht beantworten, sondern nur ihre Unsinnigkeit feststellen.
+Die meisten Fragen und Sätze der Philosophen beruhen darauf, dass wir unsere Sprachlogik nicht verstehen.<br />
+(Sie sind von er Art der Frage, ob das Gute mehr oder weniger identisch sei als das Schöne.)<br />
+Und es ist nicht verwunderlich, dass die tifsten Probleme eigentlich  ke i n e  Probleme sind.</p>
+<p><strong>4.0031</strong>
+Alle Philosophie ist &quot;Sprachkritik&quot;.
+(Allerdings nicht im Sinne Mauthners.)
+Russells Verdienst ist es, gezeigt zu haben, dass die scheinbare logische Form des Satzes nicht seine wirkliche sein muss.</p>
+<p><strong>4.01</strong>
+Der Satz ist ein Bild der Wirklichkeit.<br />
+Der Satz ist ein Modell der Wirklichkeit, so wie wir sie uns denken.</p>
+<p><strong>4.011</strong>
+Auf den ersten Blick scheint der Satz - wie er etwa auf dem Papier gedruckt steht - kein Bild der Wirklichkeit zu sein, von der er handelt.
+Aber auch die Notenschrift scheint auf den ersten Blick kein Bild der Musik zu sein, und unsere Lautzeichen-(Buchstaben-)Schrift kein Bild unserer Lautsprache.<br />
+Und doch erweisen sich diese Zeichensprachen auch im geöhnlichen Sinne als Bilder dessen, was sie darstellen.</p>
+<p><strong>4.012</strong>
+Offenbar ist, dass wir einen Satz von der Form &quot;\(aRb\)&quot; als Bild empfinden.
+Hier ist das Zeichen offenbar ein Gleichnis des Bezeichneten.</p>
+<p><strong>4.013</strong>
+Und wenn wir in das Wesentliche dieser Bildhaftigkeit eindringen, so sehen wir, dass dieselbe durch  s c h e i n b a r e  U n r e g e l m ä ß i g k e i t e n  (wie die Verwendungen von \(\sharp\) und \(\flat\) in der Notenschrift)  n i c h t  gestört wird.<br />
+Denn auch diese Unregelmäßigkeiten bilden das ab, was die ausdrücken sollen; nur auf eine andere Art und Weise.</p>
+<p><strong>4.014</strong>
+Die Grammophonplatte, der musikalische Gedanke, die Notenschrift, die Schallwellen, stehen alle in jener abbildenden internen Beziehung zu einander, die zwischen Sprache und Welt besteht.<br />
+Ihnen allen ist der logische Bau gemeinsam.<br />
+(Wie im Märchen die zwei Jüngliche, ihre zwei Pferde und ihre Lilien.
+Sie sind alle in gewissem Sinne Eins.)</p>
+<p><strong>4.0141</strong>
+Dass es eine allgemeine Regel gibt, durch die der Musiker aus der Partitur die Symphonie entnehmen kann, durch welche man aus der Linie auf der Grammophonplatte die Symphonie und nach der ersten Regel wieder die Partitur ableiten kann, darin besteht eben die innere Ähnlichkeit dieser scheinbar so ganz verschiedenen Gebilde.
+Und jene Regel ist das Gesetz der Projektion, welches die Symphonie in die Notensprache projiziert.
+Sie ist die Regel der Übersetzung der Notensprache in die Sprache der Grammophonplatte.</p>
+<p><strong>4.015</strong>
+Die Möglichkeit aller Gleichnisse, der ganzen Bildhaftigkeit unserer Ausdrucksweise, ruht in der Logik der Abbildung.</p>
+<p><strong>4.016</strong>
+Um das Wesen des Satzes zu verstehen, denken wir an die Hieroglyphenschrift, welche die Tatsachen die sie beschreibt abbildet.<br />
+Und auch ihr wurde die Buchstabenschrift, ohne das Wesentliche der Abbildung zu verlieren.</p>
+<p><strong>4.02</strong>
+Dies sehen wir daraus, dass wir den Sinn des Satzzeichens verstehen, ohne dass er uns erklärt wurde.</p>
+<p><strong>4.021</strong>
+Der Satz ist ein Bild der Wirklichkeit:
+Denn ich kenne die von ihm dargestellte Sachlage, wenn ich den Satz verstehe.
+Und den Satz verstehe ich, ohne dass mir sein Sinn erklärt wurde.</p>
+<p><strong>4.022</strong>
+Der Satz  z e i g t  seinen Sinn.<br />
+Der Satz  z e i g t, wie es sich verhält,  w e n n  er wahr ist.
+Und er  s a g t,  d a s s  es sich so verhält.</p>
+<p><strong>4.023</strong>
+Die Wirklichkeit muss durch den Satz auf ja oder nein fixiert sein.<br />
+Dazu muss sie durch ihn vollständig beschrieben werden.<br />
+Der Satz ist die Beschreibung eines Sachverhaltes.<br />
+Wie die Beschreibung einen Gegenstand nach seinen externen Eigenschaften, so beschreibt der Satz die Wirklichkeit nach ihren internen Eigenschaften.<br />
+Der Satz konstruiert eine Welt mit Hilfe eines logischen Gerüstes und darum kann man am Satz auch sehen, wie sich alles Logische verhält,  w e n n  er wahr ist.
+Man kann aus einem falschen Satz  S c h l ü s s e  z i e h e n.</p>
+<p><strong>4.024</strong>
+Einen Satz verstehen, heißt, wissen was der Fall ist, wenn er wahr ist.<br />
+(Man kann ihn also verstehen, ohne zu wissen, ob er wahr ist.)<br />
+Man versteht ihn, wenn man seine Bestandteile versteht.</p>
+<p><strong>4.025</strong>
+Die Übersetzung einer Sprache in eine andere geht nicht so vor sich, dass man jeden  S a t z  der einen in einen  S a t z  der anderen übersetzt, sondern nur die Satzbestandteile werden übersetzt.<br />
+(Und das Wörterbuch übersetzt nicht nur Substantiva, sondern auch Zeit-, Eigenschafts- und Bindewörter etc.; und es behandelt sie alle gleich.)</p>
+<p><strong>4.026</strong>
+Die Bedeutung der einfachen Zeichen (der Wörter) müssen uns erklärt werden, dass wir sie verstehen.<br />
+Mit den Sätzen aber verständigen wir uns.</p>
+<p><strong>4.027</strong>
+Es liegt im Wesen des Satzes, dass er uns einen  n e u e n  Sinn mitteilen kann.</p>
+<p><strong>4.03</strong>
+Ein Satz muss mit alten Ausdrücken einen neuen Sinn mitteilen.<br />
+Der Satz teilt uns eine Sachlage mit, also muss er  w e s e n t l i c h  mit der Sachlage zusammenhängen.<br />
+Und der Zusammenhang ist eben, dass er ihr logisches Bild ist.<br />
+Der satz sagt nur insoweit etwas aus, als er ein Bild ist.</p>
+<p><strong>4.031</strong>
+Im Satz wird gleichsam eine Sachlge probeweise zusammengestellt.<br />
+Man kann geradezu sagen: statt, dieser Satz hat diesen und diesen Sinn; dieser Satz stellt diese und diese Sachlage dar.</p>
+<p><strong>4.0311</strong>
+Ein Name steht für ein Ding, ein anderer für ein anderes Ding und untereinander sind sie verbunden, so stellt das Ganze - wie ein lebendes Bild - den Sachverhalt vor.</p>
+<p><strong>4.0312</strong>
+Die Möglichkeit des Satzes beruht auf dem Prinzip der Vertretung von Gegenständen durch Zeichen.<br />
+Mein Grundgedanke ist, dass die &quot;logischen Konstanten&quot; nicht vertreten.
+Dass sich die  L o g i k  der Tatsachen nicht vertreten lässt.</p>
+<p><strong>4.032</strong>
+Nur insoweit ist der Satz ein Bild der Sachlage, als er logisch gegliedert ist.<br />
+(Auch der Satz: &quot;ambulo&quot;, ist zusammengesetzt, denn sein Stamm ergibt mit einer anderen Endung, und seine Endung mit einem anderen Stamm, einen anderen Sinn.)</p>
+<p><strong>4.04</strong>
+Am Satz muss gerade soviel zu unterscheiden sein, als an der Sachlage, die er darstellt.<br />
+Die beiden müssen die gleiche logische (mathematische) Mannigfaltigkeit besitzen.
+(Vergleiche Hertz's &quot;Mechanik&quot;, über dynamische Modelle.)</p>
+<p><strong>4.041</strong>
+Diese mathematische Mannigfaltigkeit kann man natürlich nicht selbst wieder abbilden.
+Aus ihr kann man beim Abbilden nicht heraus.</p>
+<p><strong>4.0411</strong>
+Wollten wir z. B. das, was wir durch &quot;\((x).fx\)&quot; ausdrücken, durch Vorsetzen eines Indexes vor &quot;\(fx\)&quot; ausdrücken - etwa so:
+&quot;Alg. \(fx\)&quot; - es würde nicht genügen - wir wüssten nicht, was verallgemeinert wurde.
+Wollten wir es durch einen Index &quot;\(_a\)&quot; anzeigen - etwas so: &quot;\(f(x_a)\)&quot; - es würde auch nicht genügen - wir wüssten nicht den Bereich der Allgemeinheitsbezeichnung.<br />
+Wollten wir es durch Einführung einer Marke in die Argumentstellen versuchen - etwa so: &quot;\((A,A).F(A,A)\)&quot; - es würde nicht genügen - wir könnten die Identität der Variablen nicht feststellen.
+U. s. w.<br />
+Alle diese Bezeichnungsweisen genügen nicht, weil sie nicht die notwendige mathematische Mannigfaltigkeit haben.</p>
+<p><strong>4.0412</strong>
+Aus demselben Grunde genügt die idealistische Erklärung des Sehens der räumlichen Beziehungen durch die &quot;Raumbrille&quot; nicht, weil sie nicht die Mannigfaltigkeit dieser Beziehungen erklären kann.</p>
+<p><strong>4.05</strong>
+Die Wirklichkeit wird mit dem Satz verglichen.</p>
+<p><strong>4.06</strong>
+Nur dadurch kann der Satz wahr oder falsch sein, indem er ein Bild der Wirklichkeit ist.</p>
+<p><strong>4.061</strong>
+Beachtet man nicht, dass der Satz einen von den Tatscahen unabhängigen Sinn hat, so kann man leicht glauben, dass wahr und falsch gleichberechtigte Beziehungen von Zeichen und Bezeichnetem sind.<br />
+Man könnte dann z. B. sagen, dass &quot;\(p\)&quot; auf die wahre Art bezeichnet, was &quot;\(\neg p\)&quot; auf die falsche Art, etc.</p>
+<p><strong>4.062</strong>
+Kann man sich nicht mit falschen Sätzen, wie bisher mit wahren, verständigen?
+Solange man nur weiß, dass sie falsch gemeint sind.
+Nein!
+Denn, wahr ist ein Satz, wenn es sich so verhält, wie wir es durch ihn sagen; und wenn wir mit &quot;\(p\)&quot; \(\neg p\) meinen, und es sich so verhält wie wir es meinen, so ist &quot;\(p\)&quot; in der neuen Auffassung wahr nicht falsch.</p>
+<p><strong>4.0621</strong>
+Dass aber die Zeichen &quot;\(p\)&quot; und &quot;\(\neg p\)&quot; das gleiche sagen  k ö n n e n, ist wichtig.
+Denn es zeigt, dass dem Zeichen &quot;\(\neg\)&quot; in der Wirklichkeit nichts entspricht.<br />
+Dass in einem Satz die Verneinung vorkommt, ist noch kein Merkmal seines Sinnes (\(\neg \neg p = p\)).<br />
+Die Sätze &quot;\(p\)&quot; und &quot;\(\neg p\)&quot; haben entgegengesetzten Sinn, aber es entspricht ihnen eine und dieselbe Wirklichkeit.</p>
+<p><strong>4.063</strong>
+Ein Bild zur Erklärung des Wahrheitsbegriffes: Schwarzer Fleck auf weißem Papier; die Form des Fleckes kann man beschreiben, indem man für jeden Punkt der Fläche angbt, ob er weiß oder schwarz ist.
+Der Tatsache, dass ein Punkt schwarz ist, entspricht eine positive - der, dass ein Punkt weiß (nicht schwarz) ist, eine negative Tatscahe.
+Bezeichne ich einen Punkt der Fläche (einen Fregeschen Wahrheitswert), so entspricht dies der Annahme, die zur Beurteilung aufgestellt wird, etc. etc.<br />
+Um aber sagen zu können, ein Punkt sei schwarz oder weiß, muss ich vorerst wissen, wann man einen Punkt schwarz und wann man ihn weiß nennt; um sagen zu können: &quot;\(p\)&quot; ist wahr (oder falsch), muss ich bestimmt haben, unter welchen Umständen ich &quot;\(p\)&quot; wahr nenne, und damit bestimme ich den Sinn des Satzes.<br />
+Der Punkt, an dem das Gleichnis hinkt ist nur der:
+Wir können auf einen Punkt des Papiers zeigen, auch ohne zu wissen, was weiß oder schwarz ist; einem Satz ohne Sinn aber entspricht gar nichts, denn er bezeichnet kein Ding (Wahrheitswert) dessen Eigenschaften etwa &quot;falsch&quot; oder &quot;wahr&quot; hießen; das Verbum eines Satzes ist nicht &quot;ist wahr&quot; oder &quot;ist falsch&quot; - wie Frege glaubte -, sondern das, was &quot;wahr ist&quot;, muss das Verbum schon enthalten.</p>
+<p><strong>4.064</strong>
+Jeder Satz muss  s c h o n  einen Sinn haben; die Bejahung kann ihn ihm nicht geben, denn sie bejaht ja gerade den Sinn.
+Und dasselbe gilt von der Verneinung, etc.</p>
+<p><strong>4.0641</strong>
+Man könnte sagen: Die Verneinung bezeiht sich schon auf den logischen Ort, den der verneinte Satz bestimmt.<br />
+Der verneinende Satz bestimmt einen  a n d e r e n  logischen Ort als der verneinte.<br />
+Der verneinende Satz bestimmt einen logischen Ort mit Hilfe des logischen Ortes des verneinten Satzes, indem er jenen als außerhalb diesem liegend beschreibt.<br />
+Dass man den verneinten Satz wieder verneinen kann, zeigt schon, dass das, was verneint wird, schon ein Satz und nicht erst die Vorbereitung zu einem Satze ist.</p>
+<p><strong>4.1</strong>
+Der Satz stellt das Bestehen und Nichtbestehen der Sachverhalte dar.</p>
+<p><strong>4.11</strong>
+Die Gesamtheit der wahren Sätze ist die gesamte Naturwissenschaft (oder die Gesamtheit der Naturwissenschaften).</p>
+<p><strong>4.111</strong>
+Die Philosophie ist keine der Naturwissenschaften.<br />
+(Das Wort &quot;Philosophie&quot; muss etwas bedeuten, was über oder unter, aber nicht neben den Naturwissenschaften steht.)</p>
+<p><strong>4.112</strong>
+Der Zweck der Philosophie ist die logische Klärung der Gedanken.<br />
+Die Philosophie ist keine Lehre, sondern eine Tätigkeit.<br />
+Ein philosophisches Werk besteht wesentlich aus Erläuterungen.<br />
+Das Resultat der Philosophie sind nicht &quot;philosophische Sätze&quot;, sondern das Klarwerden von Sätzen.<br />
+Die Philosophie soll die Gedanken, die sonst, gleichsam, trübe und verschwommen sind, klar machen und scharf abgrenzen.</p>
+<p><strong>4.1121</strong>
+Die Psychologie ist der Philosophie nicht verwandter als irgendeine andere Naturwissenschaft.<br />
+Erkenntnistheorie ist die Philosophie der Psychologie.<br />
+Entspricht nicht mein Studium der Zeichensprache dem Studium der Denkprozesse, welches die Philosophen für die Philosophie der Logik für so wesentlich hielten?
+Nur verwickelten sie sich meistens in unwesentliche psychologische Untersuchungen und eine analoge Gefahr gibt es auch bei meiner Methode.</p>
+<p><strong>4.1122</strong>
+Die Darwinsche Theorie hat mit der Philosophie nicht mehr zu schaffen als irgendeine andere Hypothese der Naturwissenschaft.</p>
+<p><strong>4.113</strong>
+Die Philosophie begrenzt das bestreitbare Gebiet der Naturwissenschaft.</p>
+<p><strong>4.114</strong>
+Sie soll das Denkbare abgrenzen und damit das Undenkbare.<br />
+Sie soll das Undenkbare von innen durch das Denkbare begrenzen.</p>
+<p><strong>4.115</strong>
+Sie wird das Unsagbare bedeuten, indem sie das Sagbare klar darstellt.</p>
+<p><strong>4.116</strong>
+Alles was überhaupt gedacht werden kann, kann klar gedacht wreden.
+Alles, was sich aussprechen lässt, lässt sich klar aussprechen.</p>
+<p><strong>4.12</strong>
+Der Satz kann die gesamte Wirklichkeit darstellen, aber er kann nicht das darstellen, was er mit der Wirklichkeit gemein haben muss, um sie darstellen zu können - die logische Form.<br />
+Um die logische Form darstellen zu können, müssten wir uns mit dem Satze außerhalb der Logik aufstellen können, das heißt außerhalb der Welt.</p>
+<p><strong>4.121</strong>
+Der Satz kann die logische Form nicht darstellen, sie spiegelt sich in ihm.<br />
+Was sich in der Sprache spiegelt, kann sie nicht darstellen.<br />
+Was  s i c h  in der Sprache ausdrückt, können  w i r  nicht durch sie ausdrücken.<br />
+Der Satz  z e i g t  die logische Form der Wirklichkeit.<br />
+Er weist sie auf.</p>
+<p><strong>4.1211</strong>
+So zeigt ein Satz &quot;\(fa\)&quot;, dass in seinem Sinn der Gegenstand \(a\) vorkommt, zwei Sätze &quot;\(fa\)&quot; und &quot;\(ga\)&quot;, dass in ihnen beiden von demselben Gegenstand die Rede ist.<br />
+Wenn zwei Sätze einander widersprechen, so zeigt dies ihre Struktur; ebenso, wenn einer aus dem anderen folgt.
+U.s.w.</p>
+<p><strong>4.1212</strong>
+Was gezeigt werden  k a n n,  k a n n  nicht gesagt werden.</p>
+<p><strong>4.1213</strong>
+Jetzt verstehen wir auch unser Gefühl: dass wir im Besitze einre richtigen logischen Auffassung seien, wenn nur einmal alles in unserer Zeichensprache stimmt.</p>
+<p><strong>4.122</strong>
+Wir können in gewissem Sinne von formalen Eigenschaften der Gegenstände und Sachverhalte bzw. von Eigenschaften der Struktur der Tatsachen reden, und in demselben Sinne von formalen Relationen und Relationen von Strukturen.<br />
+(Statt Eigenschaft der Struktur sage ich auch &quot;interne Eigenschaft&quot;; statt Relation der Strukturen &quot;interne Relation&quot;.<br />
+Ich führe diese Ausdrücke ein, um den Grund der bei den Philosophen sehr verbreiteten Verwechslung zwischen den internen Relationen und den eigentlichen (externen) Relationen zu zeigen.)<br />
+Das Bestehen solcher interner Eigenschaften und Relationen kann aber nicht durch Sätze behauptet werden, sondern es zeigt sich in den Sätzen, welche jene Sachverhalt darstellen und von jenen Gegenständen handeln.</p>
+<p><strong>4.1221</strong>
+Eine interne Eigenschaft einer Tatsache könen wir auch einenZug dieser Tatsache nennen.
+(In dem Sinn, in welchem wir etwa von Gesichtszügen sprechen.)</p>
+<p><strong>4.123</strong>
+Eine Eigenschaft ist intern, wenn es undenkbar ist, dass ihr Gegenstand sie nicht besitzt.<br />
+(Diese blaue Farbe und jene stehen in der internen Relation von heller und dunkler eo ipso. 
+Es ist undenkbar, dass d i e s e beiden Gegenstände nicht in dieser Relation stünden.)<br />
+(Hier entspricht dem schwankenden Gebrauch der Worte &quot;Eigenschaft&quot; und &quot;Relation&quot; der schwankende Gebrauch des Wortes &quot;Gegenstand&quot;.)</p>
+<p><strong>4.124</strong>
+Das Bestehen einer internen Eigenschaft einer möglichen Sachlage wird nicht durch einen Satz ausgedrückt, sondern es drückt sich in dem sie darstellenden Satz durch eine interne Eigenschaft dieses Satzes aus.<br />
+Es wäre ebenso unsinnig, dem Satze eine formale Eigenschaft zuzusprechen, als sie ihm abzusprechen.</p>
+<p><strong>4.1241</strong>
+Formen kann man nicht dadurch voneinander unterscheiden, dass man sagt, die eine habe diese, die andere aber jene Eigenschaft; denn dies setzt voraus, dass es einen Sinn habe, beide Eigenschaften von beiden Formen auszusagen.</p>
+<p><strong>4.125</strong>
+Das Bestehen einer internen Relation zwischen möglichen Sachlagen drückt sich sprachlich durch eine interne Relation zwischen den sie darstellenden Sätzen aus.</p>
+<p><strong>4.1251</strong>
+Hier erledigt sich nun die Streitfrage, &quot;ob alle Relationen intern oder extern seien&quot;.</p>
+<p><strong>4.1252</strong>
+Reihen, welche durch  i n t e r n e  Relationen geordnet sind, nenne ich Formenreihen.<br />
+Die Zahlenreihe ist nicht nach einer externen, sondern nach einer internen Relation geordnet.<br />
+Ebenso die Reihe der Sätze &quot;\(aRb\)&quot;,<br />
+&quot;\((\exists x):aRx . xRb\)&quot;,<br />
+&quot;\((\exists x, y):aRx . xR y . yRb\)&quot;, u. s. f.<br />
+(Steht \(b\) in einer dieser Beziehungen zu \(a\), so nenne ich \(b\) einen Nachfolder von \(a\).)</p>
+<p><strong>4.126</strong>
+In dem Sinne, in welchem wir von formalen Eigenschaften sprechen, können wir nun auch von formalen Begriffen reden.<br />
+(Ich führe diesen Ausdruck ein, um den Grund der Verwechslung der formalen Begriffe mit den eigentlichen Begriffen, welche die ganze alte Logik durchzieht, klar zu machen.)<br />
+Dass etwas unter einen formalen Begriff als dessen Gegenstand fällt, kann nicht durch einen Satz ausgedrückt werden.
+Sondern es zeigt sich an dem Zeichen dieses Gegenstandes
+selbst.
+(Der Name zeigt, dass er einen Gegenstand bezeichnet, das Zahlenzeichen, dass es eine Zahl bezeichnet etc.)<br />
+Die formalen Begriffe können ja nicht, wie die eigentlichen Begriffe, durch eine Funktion dargestellt werden.<br />
+Denn ihre Merkmale, die formalen Eigenschaften, werden nicht durch Funktionen ausgedrückt.<br />
+Der Ausdruck der formalen Eigenschaft ist ein Zug gewisser Symbole.<br />
+Das Zeichen der Merkmale eines formalen Begriffes ist also ein charakteristischer Zug aller Symbole, deren Bedeutungen unter den Begriff fallen.<br />
+Der Ausdruck des formalen Begriffes, also, eine Satzvariable, in welcher nur dieser charakteristische Zug konstant ist.</p>
+<p><strong>4.127</strong>
+Die Satzvariable bezeichnet den formalen Begriff und ihre Werte die Gegenstände, welche unter diesen Begriff fallen.</p>
+<p><strong>4.1271</strong>
+Jede Variable ist das Zeichen eines formalen Begriffes.<br />
+Denn jede Variable stellt eine konstante Form dar, welche alle ihre Werte besitzen, und die als formale Eigenschaft dieser Werte aufgefasst werden kann.</p>
+<p><strong>4.1272</strong>
+So ist der variable Name &quot;\(x\)&quot; das eigentliche Zeichen des Scheinbegriffes G e g e n s t a n d.<br />
+Wo immer das Wort &quot;Gegenstand&quot; (&quot;Ding&quot;, &quot;Sache&quot;, etc.) richtig gebraucht wird, wird es in der Begriffsschrift durch den variablen Namen ausgedrückt.<br />
+Zum Beispiel in dem Satz &quot;es gibt 2 Gegenstände, welche . . . &quot; durch &quot;\((\exists x, y)\)...&quot;.<br />
+Wo immer es anders, also als eigentliches Begriffswort gebraucht wird, entstehen unsinnige Scheinsätze.<br />
+So kann man z. B. nicht sagen &quot;Es gibt Gegenstände&quot;, wie man etwa sagt: &quot;Es gibt Bücher&quot;. Und ebenso wenig: &quot;Es gibt 100 Gegenstände&quot;, oder &quot;Es gibt \(\aleph_0\) Gegenstände&quot;.<br />
+Und es ist unsinnig, von der A n z a h l  a l l e r  G e g e n s t ä n d e zu sprechen.<br />
+Dasselbe gilt von den Worten &quot;Komplex&quot;, &quot;Tatsache&quot;, &quot;Funktion&quot;, &quot;Zahl&quot;, etc.<br />
+Sie alle bezeichnen formale Begriffe und werden in der Begriffsschrift durch Variable, nicht durch Funktionen oder Klassen dargestellt.
+(Wie Frege und Russell glaubten.)<br />
+Ausdrücke wie &quot;1 ist eine Zahl&quot;, &quot;Es gibt nur Eine Null&quot; und alle ähnlichen sind unsinnig.<br />
+(Es ist ebenso unsinnig zu sagen: &quot;Es gibt nur Eine 1&quot;, als es unsinnig wäre, zu sagen: &quot;2+2 ist um 3 Uhr gleich 4&quot;.)</p>
+<p><strong>4.12721</strong>
+Der formale Begriff ist mit einem Gegenstand, der unter ihn fällt, bereits gegeben. 
+Man kann also nicht Gegenstände eines formalen Begriffes u n d den formalen Begriff selbst als Grundbegriffe einführen.
+Man kann also z. B. nicht den Begriff der Funktion, und auch spezielle Funktionen (wie Russell) als Grundbegriffe einführen; oder den Begriff der Zahl und bestimmte Zahlen.</p>
+<p><strong>4.1273</strong>
+Wollen wir den allgemeinen Satz: &quot;\(b\) ist ein Nachfolger von \(a\)&quot; in der Begriffsschrift ausdrücken, so brauchen wir hierzu einen Ausdruck für das allgemeine Glied der Formenreihe:</p>
+<p>\[aRb,\]
+\[(\exists x): aRx . xRb,\]
+\[(\exists x, y): aRx . xR y . yRb,\]
+\[\dots\]</p>
+<p>Das allgemeine Glied einer Formenreihe kann man nur durch eine Variable ausdrücken, denn der Begriff: Glied dieser Formenreihe, ist ein f o r m a l e r Begriff.
+(Dies haben Frege und Russell übersehen; die Art und Weise, wie sie
+allgemeine Sätze wie den obigen ausdrücken wollen, ist daher falsch; sie enthält einen circulus vitiosus.)<br />
+Wir können das allgemeine Glied der Formenreihe bestimmen, indem wir ihr erstes Glied angeben und die allgemeine Form der Operation, welche das folgende Glied aus dem vorhergehenden Satz erzeugt.</p>
+<p><strong>4.1274</strong>
+Die Frage nach der Existenz eines formalen Begriffes ist unsinnig.
+Denn kein Satz kann eine solche Frage beantworten.<br />
+(Man kann also z. B. nicht fragen: &quot;Gibt es unanalysierbare Subjekt-Prädikatsätze?&quot;)</p>
+<p><strong>4.128</strong>
+Die logischen Formen sind zahl l o s.<br />
+Darum gibt es in der Logik keine ausgezeichneten Zahlen und darum gibt es keinen philosophischen Monismus oder Dualismus, etc.</p>
+<p><strong>4.2</strong>
+Der Sinn des Satzes ist seine Übereinstimmung und Nichtübereinstimmung mit den Möglichkeiten des Bestehens und Nichtbestehens der Sachverhalte.</p>
+<p><strong>4.21</strong>
+Der einfachste Satz, der Elementarsatz, behauptet das Bestehen eines Sachverhaltes.</p>
+<p><strong>4.211</strong>
+Ein Zeichen des Elementarsatzes ist es, dass kein Elementarsatz mit ihm in Widerspruch stehen kann.</p>
+<p><strong>4.22</strong>
+Der Elementarsatz besteht aus Namen.
+Er ist ein Zusammenhang, eine Verkettung, von
+Namen.</p>
+<p><strong>4.221</strong>
+Es ist offenbar, dass wir bei der Analyse der Sätze auf Elementarsätze kommen müssen, die aus Namen in unmittelbarer Verbindung bestehen.<br />
+Es frägt sich hier, wie kommt der Satzverband zustande.</p>
+<p><strong>4.2211</strong>
+Auch wenn die Welt unendlich komplex ist, so dass jede Tatsache aus unendlich vielen Sachverhalten besteht und jeder Sachverhalt aus unendlich vielen Gegenständen zusammengesetzt ist, auch dann müsste es Gegenstände und Sachverhalte geben.</p>
+<p><strong>4.23</strong>
+Der Name kommt im Satz nur im Zusammenhange des Elementarsatzes vor.</p>
+<p><strong>4.24</strong>
+Die Namen sind die einfachen Symbole, ich deute sie durch einzelne Buchstaben (&quot;\(x\)&quot;, &quot;\(y\)&quot;, &quot;\(z\)&quot;) an.<br />
+Den Elementarsatz schreibe ich als Funktion der Namen in der Form: &quot;\(f x\)&quot;, &quot;\(\phi (x, y)\)&quot;, etc.<br />
+Oder ich deute ihn durch die Buchstaben \(p\), \(q\), \(r\) an.</p>
+<p><strong>4.241</strong>
+Gebrauche ich zwei Zeichen in ein und derselben Bedeutung, so drücke ich dies aus, indem ich zwischen beide das Zeichen &quot;\(=\)&quot; setze.<br />
+&quot;\(a = b\)&quot; heißt also: das Zeichen &quot;\(a\)&quot; ist durch das Zeichen &quot;\(b\)&quot; ersetzbar.<br />
+(Führe ich durch eine Gleichung ein neues Zeichen &quot;\(b\)&quot; ein, indem ich bestimme, es solle ein bereits bekanntes Zeichen &quot;\(a\)&quot; ersetzen, so schreibe ich die Gleichung-Definition-(wie
+Russell) in der Form &quot;\(a = b\) Def.&quot;.
+Die Definition ist eine Zeichenregel.)</p>
+<p><strong>4.242</strong>
+Ausdrücke von der Form &quot;\(a = b\)&quot; sind also nur Behelfe der Darstellung; sie sagen nichts über die Bedeutung der Zeichen &quot;\(a\)&quot;, &quot;\(b\)&quot; aus.</p>
+<p><strong>4.243</strong>
+Können wir zwei Namen verstehen, ohne zu wissen, ob sie dasselbe Ding oder zwei verschiedene Dinge bezeichnen? - 
+Können wir einen Satz, worin zwei Namen vorkommen, verstehen, ohne zu wissen, ob sie Dasselbe oder Verschiedenes bedeuten?<br />
+Kenne ich etwa die Bedeutung eines englischen und eines gleichbedeutenden deutschen Wortes, so ist es unmöglich, dass ich nicht weiß, dass die beiden gleichbedeutend sind; es ist unmöglich, dass ich sie nicht ineinander übersetzen kann.<br />
+Ausdrücke wie &quot;\(a = a\)&quot;, oder von diesen abgeleitete, sind weder Elementarsätze, noch sonst sinnvolle Zeichen.
+(Dies wird sich später zeigen.)</p>
+<p><strong>4.25</strong>
+Ist der Elementarsatz wahr, so besteht der Sachverhalt; ist der Elementarsatz falsch, so besteht der Sachverhalt nicht.</p>
+<p><strong>4.26</strong>
+Die Angabe aller wahren Elementarsätze beschreibt die Welt vollständig.
+Die Welt ist vollständig beschrieben durch die Angaben aller Elementarsätze plus der Angabe, welche von ihnen wahr und welche falsch sind.</p>
+<p><strong>4.27</strong>
+Bezüglich des Bestehens und Nichtbestehens von n Sachverhalten gibt es \(K_n = \sum_{v=0}^n{\binom{n}{v}}\) Möglichkeiten.<br />
+Es können alle Kombinationen der Sachverhalte bestehen, die andern nicht bestehen.</p>
+<p><strong>4.28</strong>
+Diesen Kombinationen entsprechen ebenso viele Möglichkeiten der Wahrheit — und Falschheit — von \(n\) Elementarsätzen.</p>
+<p><strong>4.3</strong>
+Die Wahrheitsmöglichkeiten der Elementarsätze bedeuten die Möglichkeiten des Bestehens und Nichtbestehens der Sachverhalte.</p>
+<p><strong>4.31</strong>
+Die Wahrheitsmöglichkeiten können wir durch Schemata folgender Art darstellen (&quot;\(W\)&quot; bedeutet &quot;wahr&quot;, &quot;\(F\)&quot;, &quot;falsch&quot;.
+Die Reihen der &quot;\(W\)&quot; und &quot;\(F\)&quot; unter der Reihe der Elementarsätze bedeuten in leichtverständlicher Symbolik deren Wahrheitsmöglichkeiten):</p>
+<table><thead><tr><th>p</th><th>q</th><th>r</th></tr></thead><tbody>
+<tr><td>\(W\)</td><td>\(W\)</td><td>\(W\)</td></tr>
+<tr><td>\(F\)</td><td>\(W\)</td><td>\(W\)</td></tr>
+<tr><td>\(W\)</td><td>\(F\)</td><td>\(W\)</td></tr>
+<tr><td>\(F\)</td><td>\(F\)</td><td>\(W\)</td></tr>
+<tr><td>\(W\)</td><td>\(W\)</td><td>\(F\)</td></tr>
+<tr><td>\(F\)</td><td>\(W\)</td><td>\(F\)</td></tr>
+<tr><td>\(W\)</td><td>\(F\)</td><td>\(F\)</td></tr>
+<tr><td>\(F\)</td><td>\(F\)</td><td>\(F\)</td></tr>
+</tbody></table>
+<table><thead><tr><th>p</th><th>q</th></tr></thead><tbody>
+<tr><td>\(W\)</td><td>\(W\)</td></tr>
+<tr><td>\(F\)</td><td>\(W\)</td></tr>
+<tr><td>\(W\)</td><td>\(F\)</td></tr>
+<tr><td>\(F\)</td><td>\(F\)</td></tr>
+</tbody></table>
+<table><thead><tr><th>p</th></tr></thead><tbody>
+<tr><td>\(W\)</td></tr>
+<tr><td>\(F\)</td></tr>
+</tbody></table>
+<p><strong>4.4</strong>
+Der Satz ist der Ausdruck der Übereinstimmung und Nichtübereinstimmung mit den Wahrheitsmöglichkeiten der Elementarsätze.</p>
+<p><strong>4.41</strong>
+Die Wahrheitsmöglichkeiten der Elementarsätze sind die Bedingungen der Wahrheit und Falschheit der Sätze.</p>
+<p><strong>4.411</strong>
+Es ist von vornherein wahrscheinlich, dass die Einführung der Elementarsätze für das Verständnis aller anderen Satzarten grundlegend ist.
+Ja, das Verständnis der allgemeinen Sätze hängt f ü h l b a r von dem der Elementarsätze ab.</p>
+<p><strong>4.42</strong>
+Bezüglich der Übereinstimmung und Nichtübereinstimmung eines Satzes mit den Wahrheitsmöglichkeiten von \(n\) Elementarsätzen gibt es \(\sum_{\kappa = 0}^{K_n}{\binom{K_n}{\kappa}} = L_n\) Möglichkeiten.</p>
+<p><strong>4.43</strong>
+Die Übereinstimmung mit den Wahrheitsmöglichkeiten können wir dadurch ausdrücken, indem wir ihnen im Schema etwa das Abzeichen &quot;\(W\)&quot; (wahr) zuordnen.<br />
+Das Fehlen dieses Abzeichens bedeutet die Nichtübereinstimmung.</p>
+<p><strong>4.431</strong>
+Der Ausdruck der Übereinstimmung und Nichtübereinstimmung mit den Wahrheitsmöglichkeiten der Elementarsätze drückt die Wahrheitsbedingungen des Satzes aus.<br />
+Der Satz ist der Ausdruck seiner Wahrheitsbedingungen.<br />
+(Frege hat sie daher ganz richtig als Erklärung der Zeichen seiner Begriffsschrift vorausgeschickt.
+Nur ist die Erklärung des Wahrheitsbegriffes bei Frege falsch: Wären &quot;das Wahre&quot; und &quot;das Falsche&quot; wirklich Gegenstände und die Argumente in \(\neg p\) etc. dann wäre nach Freges Bestimmung der Sinn von &quot;\(\neg p\)&quot; keineswegs
+bestimmt.)</p>
+<p><strong>4.44</strong>
+Das Zeichen, welches durch die Zuordnung jener Abzeichen &quot;\(W\)&quot; und der Wahrheitsmöglichkeiten entsteht, ist ein Satzzeichen.</p>
+<p><strong>4.441</strong>
+Es ist klar, dass dem Komplex der Zeichen &quot;\(F\)&quot; und &quot;\(W\)&quot; kein Gegenstand (oder Komplex von Gegenständen) entspricht; so wenig, wie
+den horizontalen und vertikalen Strichen oder den Klammern. — &quot;Logische Gegenstände&quot; gibt es nicht.<br />
+Analoges gilt natürlich für alle Zeichen, die dasselbe ausdrücken wie die Schemata der &quot;\(W\)&quot;
+und &quot;\(F\)&quot;.</p>
+<p><strong>4.442</strong>
+Es ist z. B.:</p>
+<table><thead><tr><th>p</th><th>q</th><th></th></tr></thead><tbody>
+<tr><td>\(W\)</td><td>\(W\)</td><td>\(W\)</td></tr>
+<tr><td>\(F\)</td><td>\(W\)</td><td>\(W\)</td></tr>
+<tr><td>\(W\)</td><td>\(F\)</td><td></td></tr>
+<tr><td>\(F\)</td><td>\(F\)</td><td>\(W\)</td></tr>
+</tbody></table>
+<p>ein Satzzeichen.<br />
+(Frege's &quot;Urteilstrich&quot; &quot;\(\vdash\)&quot; ist logisch ganz bedeutunglos; er zeigt bei Frege (und Russell) nur an, dass diese Autoren die so bezeichneten Sätze für wahr halten.
+&quot;\(\vdash\)&quot; gehört daher ebenso wenig zum Satzgefüge, wie etwa die Nummer des Satzes.
+Ein Satz kann unmöglich von sich selbst aussagen, dass er wahr ist.)<br />
+Ist die Reihenfolge der Wahrheitsmöglichkeiten im Schema durch eine Kombinationsregel ein für allemal festgesetzt, dann ist die letzte Kolonne allein schon ein Ausdruck der Wahrheitsbedingungen.
+Schreiben wir diese Kolonne als Reihe hin, so wird das Satzzeichen zu</p>
+<p>\[(WW − W) (p, q)\]</p>
+<p>oder deutlicher</p>
+<p>\[(WWFW) (p, q)\].</p>
+<p>(Die Anzahl der Stellen in der linken Klammer ist durch die Anzahl der Glieder in der rechten bestimmt.)</p>
+<p><strong>4.45</strong>
+Für \(n\) Elementarsätze gibt es \(L_n\) mögliche Gruppen von Wahrheitsbedingungen.<br />
+Die Gruppen von Wahrheitsbedingungen, welche zu den Wahrheitsmöglichkeiten einer Anzahl von Elementarsätzen gehören, lassen sich in eine Reihe ordnen.</p>
+<p><strong>4.46</strong>
+Unter den möglichen Gruppen von Wahrheitsbedingungen gibt es zwei extreme Fälle.<br />
+In dem einen Fall ist der Satz für sämtliche Wahrheitsmöglichkeiten der Elementarsätze wahr.
+Wir sagen, die Wahrheitsbedingungen sind t a u t o l o g i s c h.<br />
+Im zweiten Fall ist der Satz für sämtliche Wahrheitsmöglichkeiten falsch: Die Wahrheitsbedingungen sind k o n t r a d i k t o r i s c h.<br />
+Im ersten Fall nennen wir den Satz eine Tautologie, im zweiten Fall eine Kontradiktion.</p>
+<p><strong>4.461</strong>
+Der Satz zeigt was er sagt, die Tautologie und die Kontradiktion, dass sie nichts sagen.<br />
+Die Tautologie hat keine Wahrheitsbedingungen, denn sie ist bedingungslos wahr; und die Kontradiktion ist unter keiner Bedingung
+wahr.<br />
+Tautologie und Kontradiktion sind sinnlos.<br />
+(Wie der Punkt, von dem zwei Pfeile in entgegengesetzter Richtung auseinandergehen.)<br />
+(Ich weiß z. B. nichts über das Wetter, wenn ich weiß, dass es regnet oder nicht regnet.)</p>
+<p><strong>4.4611</strong>
+Tautologie und Kontradiktion sind aber nicht unsinnig; sie gehören zum Symbolismus, und zwar ähnlich wie die &quot;0&quot; zum Symbolismus der Arithmetik.</p>
+<p><strong>4.462</strong>
+Tautologie und Kontradiktion sind nicht Bilder der Wirklichkeit.
+Sie stellen keine mögliche Sachlage dar.
+Denn jene lässt  j e d e  mögliche Sachlage zu, diese k e i n e.<br />
+In der Tautologie heben die Bedingungen der Übereinstimmung mit der Welt — die darstellenden Beziehungen — einander auf, so dass sie in keiner darstellenden Beziehung zur Wirklichkeit steht.</p>
+<p><strong>4.463</strong>
+Die Wahrheitsbedingungen bestimmen den Spielraum, der den Tatsachen durch den Satz gelassen wird.<br />
+(Der Satz, das Bild, das Modell, sind im negativen Sinne wie ein fester Körper, der die Bewegungsfreiheit der anderen beschränkt; im positiven Sinne, wie der von fester Substanz begrenzte Raum, worin ein Körper Platz hat.)<br />
+Die Tautologie lässt der Wirklichkeit den ganzen—unendlichen—logischen Raum; die Kontradiktion erfüllt den ganzen logischen Raum und lässt der Wirklichkeit keinen Punkt.
+Keine von beiden kann daher die Wirklichkeit irgendwie bestimmen.</p>
+<p><strong>4.464</strong>
+Die Wahrheit der Tautologie ist gewiss, des Satzes möglich, der Kontradiktion unmöglich.<br />
+(Gewiss, möglich, unmöglich: Hier haben wir das Anzeichen jener Gradation, die wir in der Wahrscheinlichkeitslehre brauchen.)</p>
+<p><strong>4.465</strong>
+Das logische Produkt einer Tautologie und eines Satzes sagt dasselbe, wie der Satz. 
+Also ist jenes Produkt identisch mit dem Satz.
+Denn man kann das Wesentliche des Symbols nicht ändern, ohne seinen Sinn zu ändern.</p>
+<p><strong>4.466</strong>
+Einer bestimmten logischen Verbindung von Zeichen entspricht eine bestimmte logische Verbindung ihrer Bedeutungen;  j e d e  b e l i e b i g e Verbindung entspricht nur den unverbundenen Zeichen.<br />
+Das heißt, Sätze, die für jede Sachlage wahr sind, können überhaupt keine Zeichenverbindungen sein, denn sonst könnten ihnen nur bestimmte Verbindungen von Gegenständen entsprechen.<br />
+(Und keiner logischen Verbindung entspricht k e i n e Verbindung der Gegenstände.)<br />
+Tautologie und Kontradiktion sind die Grenzfälle der Zeichenverbindung, nämlich ihre Auflösung.</p>
+<p><strong>4.4661</strong>
+Freilich sind auch in der Tautologie und Kontradiktion die Zeichen noch mit einander verbunden, d. h. sie stehen in Beziehungen zueinander, aber diese Beziehungen sind bedeutungslos, dem S y m b o l unwesentlich.</p>
+<p><strong>4.5</strong>
+Nun scheint es möglich zu sein, die allgemeinste Satzform anzugeben: das heißt, eine Beschreibung der Sätze  i r g e n d e i n e r  Zeichensprache zu geben, so dass jeder mögliche Sinn durch ein Symbol, auf welches die Beschreibung passt, ausgedrückt werden kann, und dass jedes Symbol, worauf die Beschreibung passt, einen Sinn ausdrücken kann, wenn die Bedeutungen der Namen entsprechend gewählt werden.<br />
+Es ist klar, dass bei der Beschreibung der allgemeinsten Satzform  n u r  ihr Wesentliches beschrieben werden darf, - sonst wäre sie nämlich nicht die allgemeinste.<br />
+Dass es eine allgemeine Satzform gibt, wird dadurch bewiesen, dass es keinen Satz geben darf, dessen Form man nicht hätte voraussehen (d. h. konstruieren) können.
+Die allgemeine Form des Satzes ist: Es verhält sich so und so.</p>
+<p><strong>4.51</strong>
+Angenommen, mir wären a l l e Elementarsätze gegeben: Dann lässt sich einfach fragen: Welche Sätze kann ich aus ihnen bilden?
+Und das sind  a l l e  Sätze und  s o  sind sie begrenzt.</p>
+<p><strong>4.52</strong>
+Die Sätze sind alles, was aus der Gesamtheit aller Elementarsätze folgt (natürlich auch daraus, dass es die  G e s a m t h e i t  a l l e r  ist).
+(So könnte man in gewissem Sinne sagen, dass a l l e Sätze Verallgemeinerungen der Elementarsätze sind.)</p>
+<p><strong>4.53</strong>
+Die allgemeine Satzform ist eine Variable.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="Satz 3.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="Satz 5.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="Satz 3.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="Satz 5.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_line_numbers = true;
+        </script>
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

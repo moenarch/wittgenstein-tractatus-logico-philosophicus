@@ -1,0 +1,369 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Satz 2 - Tractatus Logico-Philosophicus</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><a href="Vorwort.html">Vorwort</a></li><li class="spacer"></li><li class="chapter-item "><a href="Satz 1.html"><strong aria-hidden="true">1.</strong> Satz 1</a></li><li class="chapter-item expanded "><a href="Satz 2.html" class="active"><strong aria-hidden="true">2.</strong> Satz 2</a></li><li class="chapter-item "><a href="Satz 3.html"><strong aria-hidden="true">3.</strong> Satz 3</a></li><li class="chapter-item "><a href="Satz 4.html"><strong aria-hidden="true">4.</strong> Satz 4</a></li><li class="chapter-item "><a href="Satz 5.html"><strong aria-hidden="true">5.</strong> Satz 5</a></li><li class="chapter-item "><a href="Satz 6.html"><strong aria-hidden="true">6.</strong> Satz 6</a></li><li class="chapter-item "><a href="Satz 7.html"><strong aria-hidden="true">7.</strong> Satz 7</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Tractatus Logico-Philosophicus</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/moenarch/wittgenstein-tractatus-logico-philosophicus/tree/main" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/moenarch/wittgenstein-tractatus-logico-philosophicus/edit/main/src/Satz 2.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="zweiter-satz"><a class="header" href="#zweiter-satz">Zweiter Satz</a></h1>
+<p>Was der Fall ist, die Tatsachen, ist das Bestehen von Sachverhalten.</p>
+<p><strong>2.01</strong>
+Der Sachverhalt ist eine Verbindung von Gegenständen. (Sachen, Dingen.)</p>
+<p><strong>2.011</strong>
+Es ist dem Ding wesentlich, der Bestandteil eines Sachverhaltes sein zu können.</p>
+<p><strong>2.012</strong>
+In der Logik ist nichts zufällig: Wenn das Ding im Sachverhalt vorkommen k a n n, so muss die Möglichkeit des Sachverhaltes im Ding bereits präjudiziert sein.</p>
+<p><strong>2.0121</strong>
+Es erschiene gleichsam als Zufall, wenn dem Ding, das allein für sich bestehen könnte, nachträglich eine Sachlage passen würde.<br />
+Wenn die Dinge in Sachverhalten vorkommen können, so muss dies schon in ihnen liegen.<br />
+(Etwas Logisches kann nicht nur möglich sein.
+Die Logik handelt von jeder Möglichkeit und alle Möglichkeiten sind ihre Tatsachen.)<br />
+Wenn wir uns räumliche Gegenstände überhaupt nicht außerhalb des Raumes, zeitliche nicht außerhalb der Zeit denken können, so können wir uns k e i n e n Gegenstand außerhalb der Möglichkeit seiner Verbindung mit anderen denken.<br />
+Wenn ich mir den Gegenstand im Verbande des Sachverhalts denken kann, so kann ich ihn nicht außerhalb der M ö g l i c h k e i t dieses Verbandes denken.</p>
+<p><strong>2.0122</strong>
+Das Ding ist selbstständig, insofern es in allen m ö g l i c h e n Sachlagen vorkommen kann, aber diese Form der Selbstständigkeit ist eine Form des Zusammenhangs mit dem Sachverhalt, eine form der Unselbstständigkeit.
+(Es ist unmöglich, dass Worte in zwei verschiedenen Weisen auftreten, allein und im Satz.)</p>
+<p><strong>2.0123</strong>
+Wenn ich den Gegenstand kenne, so kenne ich auch sämtliche Möglichkeiten seines Vorkommens in Sachverhalten.<br />
+(Jede solche Möglichkeit muss in der Natur des Gegenstandes liegen.)<br />
+Es kann nicht nachträglich eine neue Möglichkeit gefunden werden.</p>
+<p><strong>2.01231</strong>
+Um einen Gegenstand zu kennen, muss ich zwar nicht seine externen - aber ich muss alle seine internen Eigenschaften kennen.</p>
+<p><strong>2.0124</strong>
+Sind alle Gegenstände gegeben, so sind damit auch alle m ö g l i c h e n Sachverhalte gegeben.</p>
+<p><strong>2.013</strong>
+Jedes Ding ist, gleichsam, in einem Raume möglicher Sachverhalte.
+Diesen Raum kann ich mir leer denken, nicht aber das Ding ohne den Raum.</p>
+<p><strong>2.0131</strong>
+Der räumliche Gegenstand muss im unendlichen Raume liegen.
+(Der Raumpunkt ist eine Argumentstelle.)<br />
+Der Fleck im Gesichtsfeld muss zwar nicht rot sein, aber eine Farbe muss er haben: er hat sozusagen den Farbenraum um sich.
+Der Ton muss e i n e Höhe haben, der Gegenstand des Tastsinnes e i n e Härte, usw.</p>
+<p><strong>2.014</strong>
+Die Gegenstände enthalten die Möglichkeit aller Sachlagen.</p>
+<p><strong>2.0141</strong>
+Die Möglichkeit seines Vorkommens in Sachverhalten, ist die Form des Gegenstandes.</p>
+<p><strong>2.02</strong>
+Der Gegenstand ist einfach.</p>
+<p><strong>2.0201</strong>
+Jede Aussage über Komplexe lässt sich in eine Aussage über deren Bestandteile und in diejenigen Sätze zerlegen, welche die Komplexe vollständig beschreiben.</p>
+<p><strong>2.021</strong>
+Die Gegenstände bilden die Substanz der Welt.
+Darum können sie nicht zusammengesetzt sein.</p>
+<p><strong>2.0211</strong>
+Hätte die Welt keine Substanz, so würde, ob ein Satz Sinn hat, davon abhängen, ob ein anderer Satz wahr ist.</p>
+<p><strong>2.0212</strong>
+Es wäre dann unmöglich, ein Bild der Welt (wahr oder falsch) zu entwerfen.</p>
+<p><strong>2.022</strong>
+Es ist offenbar, dass auch eine von der wirklichen noch so verschieden gedachte Welt Etwas - eine Form - mit der wirklichen gemein haben muss.</p>
+<p><strong>2.023</strong>
+Diese feste Form besteht eben aus den Gegenständen.</p>
+<p><strong>2.0231</strong>
+Die Substanz der Welt k a n n nur eine Form und keine materiellen Eigenschaften bestimmen.
+Denn diese werden erst durch die Sätze dargestellt - erst durch die Konfiguration der Gegenstände gebildet.</p>
+<p><strong>2.0232</strong>
+Beiläufig gesprochen: Die Gegenstände sind farblos.</p>
+<p><strong>2.0233</strong>
+Zwei Gegenstände von der gleichen logischen Form sind - abgesehen von ihren externen Eigenschaften - von einander nur dadurch unterscheiden, dass sie verschieden sind.</p>
+<p><strong>2.02331</strong>
+Entweder ein Ding hat Eigenschaften, die kein anderes hat, dann kann man es ohne weiteres durch eine Beschreibung aus den anderen herausheben, und darauf hinweisen; oder aber, es gibt mehrere Dinge, die ihre sämtlichen Eigenschaften gemeinsam haben, dann ist es überhaupt unmöglich auf eines von ihnen zu zeigen.<br />
+Denn, ist das Ding durch nichts hervorgehoben, so kann ich es nicht hervorheben, denn sonst ist es eben hervorgehoben.</p>
+<p><strong>2.024</strong>
+Die Susbtanz ist das, was unabhängig von dem was der Fall ist, besteht.</p>
+<p><strong>2.025</strong>
+Sie ist Form und Inhalt.</p>
+<p><strong>2.0251</strong>
+Raum, Zeit und Farbe (Färbigkeit) sind Formen der Gegenstände.</p>
+<p><strong>2.026</strong>
+Nur wenn es Gegenstände gibt, kann es eine feste Form der Welt geben.</p>
+<p><strong>2.027</strong>
+Das Feste, das Bestehende und der Gegenstand sind Eins.</p>
+<p><strong>2.0271</strong>
+Der Gegenstand ist das Feste, Bestehende; die Konfiguration sit das Wechselnde, Unbeständige.</p>
+<p><strong>2.0272</strong>
+Die Konfiguration der Gegenstände bildet den Sachverhalt.</p>
+<p><strong>2.03</strong>
+Im Sachverhalt hängen die Gegenstände ineinander, wie die Glieder einer Kette.</p>
+<p><strong>2.031</strong>
+Im Sachverhalt verhalten sich die Gegenstände in bestimmter Art und Weise zueinander.</p>
+<p><strong>2.032</strong>
+Die Art und Weise, wie die Gegenstände im Sachverhalt zusammenhängen, ist die Struktur des Sachverhaltes.</p>
+<p><strong>2.033</strong>
+Die Form ist die Möglichkeit der Struktur.</p>
+<p><strong>2.034</strong>
+Die Struktur der Tatsache besteht aus den Strukturen der Sachverhalte.</p>
+<p><strong>2.04</strong>
+Die Gesamtheit der bestehenden Sachverhalte ist die Welt.</p>
+<p><strong>2.05</strong>
+Die Gesamtheit der bestehenden Sachverhalte bestimmt auch, welche Sachverhalte nicht bestehen.</p>
+<p><strong>2.06</strong>
+Das Bestehen und Nichtbestehen von Sachverhalten ist die Wirklichkeit.<br />
+(Das Bestehen von Sachverhalten nennen wir auch eine positive, das Nichtbestehen eine negative Tatsache.)</p>
+<p><strong>2.061</strong>
+Die Sachverhalte sind von einander unabhängig.</p>
+<p><strong>2.062</strong>
+Aus dem Bestehen oder Nichtbestehen eines Sachverhaltes kann nicht auf das Bestehen und Nichtbestehen eines anderen geschlossen werden.</p>
+<p><strong>2.063</strong>
+Die gesamte Wirklichkeit ist die Welt.</p>
+<p><strong>2.1</strong>
+Wir machen uns Bilder der Tatsachen.</p>
+<p><strong>2.11</strong>
+Das Bild stellt die Sachlage im logischen Raume, das Bestehen und Nichtbestehen von Sachverhalten vor.</p>
+<p><strong>2.12</strong>
+Das Bild ist ein Modell der Wirklichkeit.</p>
+<p><strong>2.13</strong>
+Den Gegenständen entsprechen im Bilde die Elemente des Bildes.</p>
+<p><strong>2.131</strong>
+Die Elemente des Bildes vertreten im Bild die Gegenstände.</p>
+<p><strong>2.14</strong>
+Das Bild besteht darin, dass sich seine Elemente in bestimmter Art und Weise zu einander verhalten.</p>
+<p><strong>2.141</strong>
+Das Bild ist eine Tatsache.</p>
+<p><strong>2.15</strong>
+Dass sich die Elemente des Bildes in bestimmter Art und Weise zueinander verhalten, stellt vor, dass sich die Sachen so zueinander verhalten.<br />
+Dieser Zusammenhang der Elemente des Bildes heiße seine Struktur und ihre Möglichkeit seine Form der Abbildung.</p>
+<p><strong>2.151</strong>
+Die Form der Abbildung ist die Möglichkeit, dass sich die Dinge so zueinander verhalten, wie die Elemente des Bildes.</p>
+<p><strong>2.1511</strong>
+Das Bild ist s o mit der Wirklichkeit verknüpft - es reicht bis zu ihr.</p>
+<p><strong>2.1512</strong>
+Es ist wie ein Maßstab an die Wirklichkeit angelegt.</p>
+<p><strong>2.15121</strong>
+Nur die äußersten Punkte der Teilstriche b e r ü h r e n den zu messenden Gegenstand.</p>
+<p><strong>2.1513</strong>
+Nach dieser Auffassung gehört also zum Bilde auch noch die abbiildende Beziehung, die es zum Bild macht.</p>
+<p><strong>2.1514</strong>
+Die abbildende Beziehung besteht aus den Zuordnungen der Elemente des Bildes und der Sachen.</p>
+<p><strong>2.1515</strong>
+Diese Zuordnungen sind gleichsam die Fühler der Bildelemente, mit denen das Bild die Wirklichkeit berührt.</p>
+<p><strong>2.16</strong>
+Die Tatsache muss, um Bild zu sein, etwas mit dem Abgebildeten gemeinsam haben.</p>
+<p><strong>2.161</strong>
+In Bild und Abgebildetem muss etwas identisch sein, damit das eine überhaupt ein Bild des anderen sein kann.</p>
+<p><strong>2.17</strong>
+Wenn das Bild mit der Wirklichkeit gemein haben muss, um sie auf seine Art und Weise - richtig oder falsch - abbilden zu können, ist seine Form der Abbildung.</p>
+<p><strong>2.171</strong>
+Das Bild kann jede Wirklichkeit abbilden, deren Form es hat.<br />
+Das räumliche Bild alles Räumliche, das farbige alles Farbige, etc.</p>
+<p><strong>2.172</strong>
+Seine Form der Abbildung aber, kann das Bild nicht abbilden; es weist sie auf.</p>
+<p><strong>2.173</strong>
+Das Bild stellt sein Objekt von außerhalb dar (sein Standpunkt ist seine Form der Darstellung), darum stellt das Bild sein Objekt richtig oder falsch dar.</p>
+<p><strong>2.174</strong>
+Das Bild kann sich aber nicht außerhalb seiner Form der Darstellung stellen.</p>
+<p><strong>2.18</strong>
+Was jedes Bild, welcher Form immer, mit der Wirklichkeit gemein haben muss, um sie überhaupt - richtig oder falsch - abbilden zu können, ist die logische Form, das ist, die Form der Wirklichkeit.</p>
+<p><strong>2.181</strong>
+Ist die Form der Abbildung die logische Form, so heißt das Bild das logische Bild.</p>
+<p><strong>2.182</strong>
+Jede Bild ist a u c h ein logisches.
+(Dagegen ist z. B. nicht jedes Bild ein räumliches.)</p>
+<p><strong>2.19</strong>
+Das logische Bild kann die Welt abbilden.</p>
+<p><strong>2.2</strong>
+Das Bild hat mit dem Abgebildeten die logische Form der Abbildung gemein.</p>
+<p><strong>2.201</strong>
+Das Bild bildet die Wirklichkeit ab, indem es eine Möglichkeit des Bestehens und Nichtbestehens von Sachverhalten darstellt.</p>
+<p><strong>2.202</strong>
+Das Bild stellt eine mögliche Sachlage im logischen Raume dar.</p>
+<p><strong>2.203</strong>
+Das Bild enthält die Möglichkeit der Sachlage, die es darstellt.</p>
+<p><strong>2.21</strong>
+Das Bild stimmt mit der Wirklichkeit überein oder nicht; es ist richtig oder unrichtig, wahr oder falsch.</p>
+<p><strong>2.22</strong>
+Das Bild stellt dar, was es darstellt, unabhängig von seiner Wahr- oder Falschheit, durch die Form der Abbildung.</p>
+<p><strong>2.221</strong>
+Was das Bild darstellt, ist sein Sinn.</p>
+<p><strong>2.222</strong>
+In der Übereinstimmung oder Nichtübereinstimmung seines Sinnes mit der Wirklichkeit, besteht seine Wahrheit oder Falschheit.</p>
+<p><strong>2.223</strong>
+Um zu erkennen, ob das Bild wahr oder falsch ist, müssen wir es mit der Wirklichkeit vergleichen.</p>
+<p><strong>2.224</strong>
+Aus dem Bild allein ist nicht zu erkennen, ob es wahr oder falsch ist.</p>
+<p><strong>2.225</strong>
+Ein a priori wahres Bild gibt es nicht.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="Satz 1.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="Satz 3.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="Satz 1.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="Satz 3.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_line_numbers = true;
+        </script>
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

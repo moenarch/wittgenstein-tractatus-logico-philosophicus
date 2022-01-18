@@ -1,0 +1,752 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Satz 5 - Tractatus Logico-Philosophicus</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><a href="Vorwort.html">Vorwort</a></li><li class="spacer"></li><li class="chapter-item "><a href="Satz 1.html"><strong aria-hidden="true">1.</strong> Satz 1</a></li><li class="chapter-item "><a href="Satz 2.html"><strong aria-hidden="true">2.</strong> Satz 2</a></li><li class="chapter-item "><a href="Satz 3.html"><strong aria-hidden="true">3.</strong> Satz 3</a></li><li class="chapter-item "><a href="Satz 4.html"><strong aria-hidden="true">4.</strong> Satz 4</a></li><li class="chapter-item expanded "><a href="Satz 5.html" class="active"><strong aria-hidden="true">5.</strong> Satz 5</a></li><li class="chapter-item "><a href="Satz 6.html"><strong aria-hidden="true">6.</strong> Satz 6</a></li><li class="chapter-item "><a href="Satz 7.html"><strong aria-hidden="true">7.</strong> Satz 7</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Tractatus Logico-Philosophicus</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/moenarch/wittgenstein-tractatus-logico-philosophicus/tree/main" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/moenarch/wittgenstein-tractatus-logico-philosophicus/edit/main/src/Satz 5.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="fünfter-satz"><a class="header" href="#fünfter-satz">Fünfter Satz</a></h1>
+<p>Der Satz ist eine Wahrheitsfunktion der Elementarsätze.<br />
+(Der Elementarsatz ist eine Wahrheitsfunktion seiner selbst.)</p>
+<p><strong>5.01</strong>
+Die Elementarsätze sind die Wahrheitsargumente des Satzes.</p>
+<p><strong>5.02</strong>
+Es liegt nahe, die Argumente von Funktionen mit den Indices von Namen zu verwechseln.
+Ich erkenne nämlich sowohl am Argument wie am Index die Bedeutung des sie enthaltenden Zeichens.<br />
+In Russells &quot;\(+_c\)&quot; ist z.B. &quot;\(c\)&quot; ein Index, der darauf hinweist, dass das ganze Zeichen das Additionszeichen für Kardinalzahlen ist.
+Aber diese Bezeichnung beruht auf willkürlicher Übereinkunft und man könnte statt &quot;\(+_c\)&quot; auch ein einfaches Zeichen wählen; in &quot;\(\neg p\)&quot; aber ist &quot;\(p\)&quot; kein Index, sondern ein Argument: der Sinn von &quot;\(\neg p\)&quot;  k a n n  n i c h t  verstanden werden, ohne dass vorher der Sinn von &quot;\(p\)&quot; verstanden worden wäre.
+(Im Namen Julius Cäsar ist &quot;Julius&quot; ein Index.
+Der Index ist immer ein Teil einer Beschreibung des Gegenstandes, dessen
+Namen wir ihn anhängen.
+Z. B.  d e r  Cäsar aus dem Geschlechte der Julier.)<br />
+Die Verwechslung von Argument und Index liegt, wenn ich mich nicht irre, der Theorie Freges von der Bedeutung der Sätze und Funktionen zugrunde.
+Für Frege waren die Sätze der Logik Namen, und deren Argumente die
+Indices dieser Namen.</p>
+<p><strong>5.1</strong>
+Die Wahrheitsfunktionen lassen sich in Reihen ordnen.<br />
+Das ist die Grundlage der Wahrscheinlichkeitslehre.</p>
+<p><strong>5.101</strong>
+Die Wahrheitsfunktionen jeder Anzahl von Elementarsätzen lassen sich in einem Schema folgender Art hinschreiben:</p>
+<table><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td>\((WWWW) (p, q)\)</td><td>Tautologie (Wenn \(p\), so \(p\); und wenn \(q\), so \(q\).) (\(p \implies p . q \implies q\))</td></tr>
+<tr><td>\((F WWW) (p, q)\)</td><td>in Worten: Nicht beides \(p\) und \(q\). (\(\neg (p \land q)\))</td></tr>
+<tr><td>\((WFWW) (p, q)\)</td><td>&quot;_ &quot;______: Wenn \(q\), so \(p\). (\(q \implies q\))</td></tr>
+<tr><td>\((WW FW) (p, q)\)</td><td>&quot;_ &quot;______: Wenn \(p\), so \(q\). (\(p \implies q\))</td></tr>
+<tr><td>\((WWW F) (p, q)\)</td><td>&quot;_ &quot;______: \(p\) oder \(q\). (\(p \lor q\))</td></tr>
+<tr><td>\((F FWW) (p, q)\)</td><td>&quot;_ &quot;______: Nicht \(q\). (\(\neg q\))</td></tr>
+<tr><td>\((F W FW) (p, q)\)</td><td>&quot;_ &quot;______: Nicht \(p\). (\(\neg p\))</td></tr>
+<tr><td>\((F WW F) (p, q)\)</td><td>&quot;_ &quot;______: \(p\), oder \(q\), aber nicht beide. (\((p \land \neg q) \iff (q \land \neg p)\))</td></tr>
+<tr><td>\((W F FW) (p, q)\)</td><td>&quot;_ &quot;______: Wenn \(p\), so \(q\); und wenn \(q\), so \(p\). (\(p \iff q\))</td></tr>
+<tr><td>\((W FW F) (p, q)\)</td><td>&quot;_ &quot;______: \(p\)</td></tr>
+<tr><td>\((WW F F) (p, q)\)</td><td>&quot;_ &quot;______: \(q\)</td></tr>
+<tr><td>\((F F FW) (p, q)\)</td><td>&quot;_ &quot;______: Weder \(p\) noch \(q\). (\(\neg p \land \neg q\)) oder (\(p \lor q)</td></tr>
+<tr><td>\((F FW F) (p, q)\)</td><td>&quot;_ &quot;______: \(p\) und nicht \(q\). (\(p \land \neg q\))</td></tr>
+<tr><td>\((F W F F) (p, q)\)</td><td>&quot;_ &quot;______: \(q\) und nicht \(p\). (\(q \land \neg p\))</td></tr>
+<tr><td>\((W F F F) (p, q)\)</td><td>&quot;_ &quot;______: \(q\) und \(p\). (\(q \land p\))</td></tr>
+<tr><td>\((F F F F) (p, q)\)</td><td>Kontradiktion (\(p\) und nicht \(p\); und \(q\) und nicht \(q\).) (\(p \land \neg p \land q \land \neg q\))</td></tr>
+</tbody></table>
+<p>Diejenigen Wahrheitsmöglichkeiten seiner Wahrheitsargumente, welche den Satz bewahrheiten, will ich seine  W a h r h e i t s g r ü n d e  nennen.</p>
+<p><strong>5.11</strong>
+Sind die Wahrheitsgründe, die einer Anzahl von Sätzen gemeinsam sind, sämtlich auch Wahrheitsgründe eines bestimmten Satzes, so sagen wir, die Wahrheit dieses Satzes folge aus der Wahrheit jener Sätze.</p>
+<p><strong>5.12</strong>
+Insbesondere folgt die Wahrheit eines Satzes &quot;\(p\)&quot; aus der Wahrheit eines anderen &quot;\(q\)&quot;, wenn alle Wahrheitsgründe des zweiten Wahrheitsgründe des ersten sind.</p>
+<p><strong>5.121</strong>
+Die Wahrheitsgründe des einen sind in denen des anderen enthalten; \(p\) folgt aus \(q\).</p>
+<p><strong>5.122</strong></p>
+<p>Folgt \(p\) aus \(q\), so ist der Sinn von &quot;\(p\)&quot; im Sinne von &quot;\(q\)&quot; enthalten.</p>
+<p><strong>5.123</strong>
+Wenn ein Gott eine Welt erschafft, worin gewisse Sätze wahr sind, so schafft er damit auch schon eine Welt, in welcher alle ihre Folgesätze stimmen.
+Und ähnlich könnte er keine Welt schaffen, worin der Satz &quot;\(p\)&quot; wahr ist, ohne seine sämtlichen Gegenstände zu schaffen.</p>
+<p><strong>5.124</strong>
+Der Satz bejaht jeden Satz, der aus ihm folgt.</p>
+<p><strong>5.1241</strong>
+&quot;\(p \land q\)&quot; ist einer der Sätze, welche &quot;\(p\)&quot; bejahen, und zugleich einer der Sätze, welche &quot;\(q\)&quot; bejahen.<br />
+Zwei Sätze sind einander entgegengesetzt, wenn es keinen sinnvollen Satz gibt, der sie beide bejaht.<br />
+Jeder Satz der einem anderen widerspricht, verneint ihn.</p>
+<p><strong>5.13</strong>
+Dass die Wahrheit eines Satzes aus der Wahrheit anderer Sätze folgt, ersehen wir aus der Struktur der Sätze.</p>
+<p><strong>5.131</strong>
+Folgt die Wahrheit eines Satzes aus der Wahrheit anderer, so drückt sich dies durch Beziehungen aus, in welchen die Formen jener Sätze zu einander stehen; und zwar brauchen wir sie nicht erst in jene Beziehungen zu setzen, indem wir sie in einem Satz miteinander verbinden, sondern diese Beziehungen sind intern und bestehen, sobald, und dadurch dass, jene
+Sätze bestehen.</p>
+<p><strong>5.1311</strong>
+Wenn wir von \(p \lor q\) und \(\sim p\) auf \(q\) schließen, so ist hier durch die Bezeichnungsweise die Beziehung der Satzformen von &quot;\(p \lor q\)&quot; und &quot;\(\sim p\)&quot; verhüllt.
+Schreiben wir aber z. B. statt &quot;\(p \lor q\)&quot; &quot;\(p | q .|. p | q \)&quot; und statt &quot;\(\sim p\)&quot; &quot;\(p | p\)&quot; (\(p | q\) = weder \(p\), noch \(q\)), so wird der innere Zusammenhang offenbar.<br />
+(Dass man aus \((x).fx\) auf \(fa\) schließen kann, das zeigt, dass die Allgemeinheit auch im Symbol &quot;\((x).fx\)&quot; vorhanden ist.)</p>
+<p><strong>5.132</strong>
+Folgt \(p\) aus \(q\), so kann ich von \(q\) auf \(p\) schließen; \(p\) aus \(q\) folgern.<br />
+Die Art des Schlusses ist allein aus den beiden Sätzen zu entnehmen.<br />
+Nur sie selbst können den Schluss rechtfertigen.<br />
+&quot;Schlussgesetze&quot;, welche - wie bei Frege und Russell - die Schlüsse rechtfertigen sollen, sind sinnlos, und wären überflüssig.</p>
+<p><strong>5.133</strong>
+Alles Folgern geschieht a priori.</p>
+<p><strong>5.134</strong>
+Aus einem Elementarsatz lässt sich kein anderer folgern.</p>
+<p><strong>5.135</strong>
+Auf keine Weise kann aus dem Bestehen irgend einer Sachlage auf das Bestehen einer von ihr gänzlich verschiedenen Sachlage geschlossen werden.</p>
+<p><strong>5.136</strong>
+Einen Kausalnexus, der einen solchen Schluss rechtfertigte, gibt es nicht.</p>
+<p><strong>5.1361</strong>
+Die Ereignisse der Zukunft  k ö n n e n  wir nicht aus den gegenwärtigen erschließen.
+Der Glaube an den Kausalnexus ist der  A b e r g l a u b e.</p>
+<p><strong>5.1362</strong>
+Die Willensfreiheit besteht darin, dass zukünftige Handlungen jetzt nicht gewusst werden können. 
+Nur dann könnten wir sie wissen, wenn die Kausalität eine  i n n e r e  Notwendigkeit wäre, wie die des logischen Schlusses. - 
+Der Zusammenhang von Wissen und Gewusstem ist der der logischen Notwendigkeit.<br />
+(&quot;\(A\) weiß, dass \(p\) der Fall ist&quot; ist sinnlos, wenn \(q\) eine Tautologie ist.)</p>
+<p><strong>5.1363</strong>
+Wenn daraus, dass ein Satz uns einleuchtet, nicht  f o l g t, dass er wahr ist, so ist das Einleuchten auch keine Rechtfertigung für unseren Glauben an seine Wahrheit.</p>
+<p><strong>5.14</strong>
+Folgt ein Satz aus einem anderen, so sagt dieser mehr als jener, jener weniger als dieser. </p>
+<p><strong>5.141</strong>
+Folgt \(p\) aus \(q\) und \(q\) aus \(p\), so sind sie ein
+und derselbe Satz.</p>
+<p><strong>5.142</strong>
+Die Tautologie folgt aus allen Sätzen: sie sagt nichts.</p>
+<p><strong>5.143</strong>
+Die Kontradiktion ist das Gemeinsame der Sätze, was  k e i n  Satz mit einem anderen gemein hat.
+Die Tautologie ist das Gemeinsame aller Sätze, welche nichts miteinander gemein
+haben.<br />
+Die Kontradiktion verschwindet sozusagen außerhalb, die Tautologie innerhalb aller Sätze.<br />
+Die Kontradiktion ist die äußere Grenze der Sätze, die Tautologie ihr substanzloser Mittelpunkt.</p>
+<p><strong>5.15</strong>
+Ist \(W_r\) die Anzahl der Wahrheitsgründe des Satzes &quot;\(r\)&quot;, \(W_{rs}\) die Anzahl derjenigen Wahrheitsgründe des Satzes &quot;\(s\)&quot;, die zugleich Wahrheitsgründe von &quot;\(r\)&quot; sind, dann nennen wir das Verhältnis: \(W_{rs} : W_r\) das Maß der  W a h r s c h e i n l i c h k e i t, welche der Satz &quot;\(r\)&quot; dem Satz &quot;\(s\)&quot; gibt.</p>
+<p><strong>5.151</strong>
+Sei in einem Schema wie dem obigen in No. 5.101 \(W_r\) die Anzahl der &quot;\(W\)&quot; im Satze \(r\); \(W_{rs}\) die Anzahl derjenigen &quot;W&quot; im Satze s, die in gleichen Kolonnen mit &quot;\(W\)&quot; des Satzes \(r\) stehen.
+Der Satz r gibt dann dem Satze s die Wahrscheinlichkeit: \(W_{rs} : W_r\).</p>
+<p><strong>5.1511</strong>
+Es gibt keinen besonderen Gegenstand, der den Wahrscheinlichkeitssätzen eigen wäre.</p>
+<p><strong>5.152</strong>
+Sätze, welche keine Wahrheitsargumente mit einander gemein haben, nennen wir von einander unabhängig.<br />
+Zwei Elementarsätze geben einander die Wahrscheinlichkeit \(\frac{1}{2}\).<br />
+Folgt \(p\) aus \(q\), so gibt der Satz &quot;\(q\)&quot; dem Satz &quot;\(p\)&quot; die Wahrscheinlichkeit 1.
+Die Gewissheit des logischen Schlusses ist ein Grenzfall der
+Wahrscheinlichkeit.<br />
+(Anwendung auf Tautologie und Kontradiktion.)</p>
+<p><strong>5.153</strong>
+Ein Satz ist an sich weder wahrscheinlich noch unwahrscheinlich.
+Ein Ereignis trifft ein, oder es trifft nicht ein, ein Mittelding gibt es nicht.</p>
+<p><strong>5.154</strong>
+In einer Urne seien gleichviel weiße und schwarze Kugeln (und keine anderen).
+Ich ziehe eine Kugel nach der anderen und lege sie wieder in die Urne zurück.
+Dann kann ich durch den Versuch feststellen, dass sich die Zahlen der gezogenen schwarzen und weißen Kugeln bei fortgesetztem Ziehen einander nähern.<br />
+D a s ist also kein mathematisches Faktum.<br />
+Wenn ich nun sage: Es ist gleich wahrscheinlich, dass ich eine weiße Kugel wie eine schwarze ziehen werde, so heißt das:
+Alle mir bekannten Umstände (die hypothetisch angenommenen Naturgesetze mitinbegriffen) geben dem Eintreffen des einen Ereignisses nicht m e h r Wahrscheinlichkeit als dem Eintreffen des anderen.
+Das heißt, sie geben - wie aus den obigen Erklärungen leicht zu entnehmen ist - jedem die Wahrscheinlichkeit \(\frac{1}{2}\).<br />
+Was ich durch den Versuch bestätige ist, dass das Eintreffen der beiden Ereignisse von den Umständen, die ich nicht näher kenne, unabhängig ist.</p>
+<p><strong>5.155</strong>
+Die Einheit des Wahrscheinlichkeitssatzes ist: Die Umstände - die ich sonst nicht weiter kenne - geben dem Eintreffen eines bestimmten Ereignisses den und den Grad der Wahrscheinlichkeit.</p>
+<p><strong>5.156</strong>
+So ist die Wahrscheinlichkeit eine Verallgemeinerung.<br />
+Sie involviert eine allgemeine Beschreibung einer Satzform.<br />
+Nur in Ermanglung der Gewissheit gebrauchen wir die Wahrscheinlichkeit. - 
+Wenn wir zwar eine Tatsache nicht vollkommen kennen, wohl aber e t w a s über ihre Form wissen.<br />
+(Ein Satz kann zwar ein unvollständiges Bild einer gewissen Sachlage sein, aber er ist immer e i n vollständiges Bild.)<br />
+Der Wahrscheinlichkeitssatz ist gleichsam ein Auszug aus anderen Sätzen.</p>
+<p><strong>5.2</strong>
+Die Strukturen der Sätze stehen in internen Beziehungen zu einander.</p>
+<p><strong>5.21</strong>
+Wir können diese internen Beziehungen dadurch in unserer Ausdrucksweise hervorheben, dass wir einen Satz als Resultat einer Operation darstellen, die ihn aus anderen Sätzen (den Basen der Operation) hervorbringt.</p>
+<p><strong>5.22</strong>
+Die Operation ist der Ausdruck einer Beziehung zwischen den Strukturen ihres Resultats
+und ihrer Basen.</p>
+<p><strong>5.23</strong>
+Die Operation ist das, was mit dem einen Satz geschehen muss, um aus ihm den anderen zu machen.</p>
+<p><strong>5.231</strong>
+Und das wird natürlich von ihren formalen Eigenschaften, von der internen Ähnlichkeit ihrer Formen abhängen.</p>
+<p><strong>5.232</strong>
+Die interne Relation, die eine Reihe ordnet, ist äquivalent mit der Operation, durch welche ein Glied aus dem anderen entsteht.</p>
+<p><strong>5.233</strong>
+Die Operation kann erst dort auftreten, wo ein Satz auf logisch bedeutungsvolle Weise aus einem anderen entsteht. Also dort, wo die logische Konstruktion des Satzes anfängt.</p>
+<p><strong>5.234</strong>
+Die Wahrheitsfunktionen der Elementarsätze sind Resultate von Operationen, die die Elementarsätze als Basen haben.
+(Ich nenne diese Operationen Wahrheitsoperationen.)</p>
+<p><strong>5.2341</strong>
+Der Sinn einer Wahrheitsfunktion von \(p\) ist eine Funktion des Sinnes von \(p\).<br />
+Verneinung, logische Addition, logische Multiplikation, etc., etc. sind Operationen.<br />
+(Die Verneinung verkehrt den Sinn des Satzes.)</p>
+<p><strong>5.24</strong>
+Die Operation zeigt sich in einer Variablen; sie zeigt, wie man von einer Form von Sätzen zu einer anderen gelangen kann.<br />
+Sie bringt den Unterschied der Formen zum Ausdruck.<br />
+(Und das Gemeinsame zwischen den Basen und dem Resultat der Operation sind eben die Basen.)</p>
+<p><strong>5.241</strong>
+Die Operation kennzeichnet keine Form, sondern nur den Unterschied der Formen.</p>
+<p><strong>5.242</strong>
+Dieselbe Operation, die &quot;\(q\)&quot; aus &quot;\(p\)&quot; macht, macht aus &quot;\(q\)&quot; &quot;\(r\)&quot; u. s. f.
+Dies kann nur darin ausgedrückt sein, dass &quot;\(p\)&quot;, &quot;\(q\)&quot;, &quot;\(r\)&quot;, etc. Variable sind, die gewisse formale Relationen allgemein zum Ausdruck bringen.</p>
+<p><strong>5.25</strong>
+Das Vorkommen der Operation charakterisiert den Sinn des Satzes nicht.<br />
+Die Operation sagt ja nichts aus, nur ihr Resultat, und dies hängt von den Basen der Operation ab.<br />
+(Operation und Funktion dürfen nicht miteinander verwechselt werden.)</p>
+<p><strong>5.251</strong>
+Eine Funktion kann nicht ihr eigenes Argument sein, wohl aber kann das Resultat einer Operation ihre eigene Basis werden.</p>
+<p><strong>5.252</strong>
+Nur so ist das Fortschreiten von Glied zu Glied in einer Formenreihe (von Type zu Type in den Hierarchien Russells und Whiteheads) möglich.
+(Russell und Whitehead haben die Möglichkeit dieses Fortschreitens nicht zugegeben, aber immer wieder von ihr Gebrauch gemacht.)</p>
+<p><strong>5.2521</strong>
+Die fortgesetzte Anwendung einer Operation auf ihr eigenes Resultat nenne ich ihre
+successive Anwendung (&quot;\(O'O'O'a\)&quot; ist das Resultat der dreimaligen successiven Anwendung
+von &quot;\(O'\xi\)&quot; auf &quot;\(a\)&quot;).<br />
+In einem ähnlichen Sinne rede ich von der successiven Anwendung m e h r e r e r Operationen auf eine Anzahl von Sätzen.</p>
+<p><strong>5.2522</strong>
+Das allgemeine Glied einer Formenreihe \(a, O'a, O’O’a, \dots\) schreibe ich daher so:
+&quot;\([a, x, O’ x]\)&quot;.
+Dieser Klammerausdruck ist eine Variable.
+Das erste Glied des Klammerausdruckes ist der Anfang der Formenreihe, das zweite die Form eines beliebigen Gliedes \(x\) der Reihe und das dritte die Form desjenigen Gliedes der Reihe, welches auf \(x\) unmittelbar folgt.</p>
+<p><strong>5.2523</strong>
+Der Begriff der successiven Anwendung der Operation ist äquivalent mit dem Begriff &quot;und so weiter&quot;.</p>
+<p><strong>5.253</strong>
+Eine Operation kann die Wirkung einer anderen rückgängig machen. Operationen können einander aufheben.</p>
+<p><strong>5.254</strong>
+Die Operation kann verschwinden (z. B. die Verneinung in &quot;\((\sim \sim p\)&quot;: \(\sim \sim p = p\)).</p>
+<p><strong>5.3</strong>
+Alle Sätze sind Resultate von Wahrheitsoperationen mit den Elementarsätzen.<br />
+Die Wahrheitsoperation ist die Art und Weise, wie aus den Elementarsätzen die Wahrheitsfunktion entsteht.<br />
+Nach dem Wesen der Wahrheitsoperation wird auf die gleiche Weise, wie aus den Elementarsätzen ihre Wahrheitsfunktion, aus Wahrheitsfunktionen eine neue.
+Jede Wahrheitsoperation erzeugt aus Wahrheitsfunktionen von Elementarsätzen wieder eine Wahrheitsfunktion von Elementarsätzen, einen Satz.
+Das Resultat jeder Wahrheitsoperation mit den Resultaten von Wahrheitsoperationen mit Elementarsätzen ist wieder das Resultat E i n e r Wahrheitsoperation mit Elementarsätzen.<br />
+Jeder Satz ist das Resultat von Wahrheitsoperationen mit Elementarsätzen.</p>
+<p><strong>5.31</strong>
+Die Schemata No. 4.31 haben auch dann eine Bedeutung, wenn &quot;\(p\)&quot;, &quot;\(q\)&quot;, &quot;\(r\)&quot;, etc. nicht Elementarsätze sind.<br />
+Und es ist leicht zu sehen, dass das Satzzeichen in No. 4.442, auch wenn &quot;\(p\)&quot; und &quot;\(q\)&quot; Wahrheitsfunktionen von Elementarsätzen sind, Eine Wahrheitsfunktion von Elementarsätzen ausdrückt.</p>
+<p><strong>5.32</strong>
+Alle Wahrheitsfunktionen sind Resultate der successiven Anwendung einer endlichen Anzahl von Wahrheitsoperationen auf die Elementarsätze.</p>
+<p><strong>5.4</strong>
+Hier zeigt es sich, dass es &quot;logische Gegenstände&quot;, &quot;logische Konstante&quot; (im Sinne Freges und Russells) nicht gibt.</p>
+<p><strong>5.41</strong>
+Denn: Alle Resultate von Wahrheitsoperationen mit Wahrheitsfunktionen sind identisch, welche eine und dieselbe Wahrheitsfunktion von Elementarsätzen sind.</p>
+<p><strong>5.42</strong>
+Dass \(\lor\), \(\supset\), etc. nicht Beziehungen im Sinne von rechts und links etc. sind, leuchtet ein.<br />
+Die Möglichkeit des kreuzweisen Definierens der logischen &quot;Urzeichen&quot; Freges und Russells zeigt schon, dass diese keine Urzeichen sind, und schon erst recht, dass sie keine Relationen bezeichnen.<br />
+Und es ist offenbar, dass das &quot;\(\supset\)&quot;, welches wir durch &quot;\(\sim \)&quot; und &quot;\(\lor\)&quot; definieren, identisch ist mit dem, durch welches wir &quot;\(\lor\)&quot; mit &quot;\(\sim \)&quot; definieren, und dass dieses &quot;\(\lor\)&quot; mit dem ersten identisch ist.
+U. s. w.</p>
+<p><strong>5.43</strong>
+Dass aus einer Tatsache p unendlich viele  a n d e r e  folgen sollten, nämlich \(\sim \sim p\), \(\sim \sim \sim \sim p\), etc., ist doch von vornherein kaum zu glauben.
+Und nicht weniger merkwürdig ist, dass die unendliche Anzahl der Sätze der Logik (der Mathematik) aus einem halben Dutzend &quot;Grundgesetzen&quot; folgen.<br />
+Alle Sätze der Logik sagen aber dasselbe.
+Nämlich nichts.</p>
+<p><strong>5.44</strong>
+Die Wahrheitsfunktionen sind keine materiellen Funktionen.<br />
+Wenn man z. B. eine Bejahung durch doppelte Verneinung erzeugen kann, ist dann die Verneinung - in irgend einem Sinn - in der Bejahung enthalten? Verneint &quot;\(\sim \sim p\)&quot; \(\sim p\), oder bejaht es \(p\); oder beides?<br />
+Der Satz &quot;\(\sim \sim p\)&quot; handelt nicht von der Verneinung wie von einem Gegenstand; wohl aber ist die Möglichkeit der Verneinung in der Bejahung bereits präjudiziert.<br />
+Und gäbe es einen Gegenstand, der &quot;\(\sim \)&quot; hieße, so müsste &quot;\(\sim \sim p\)&quot; etwas anderes sagen als &quot;\(p\)&quot;. Denn der eine Satz würde dann eben von \(\sim \) handeln, der andere nicht.</p>
+<p><strong>5.441</strong>
+Dieses Verschwinden der scheinbaren logischen Konstanten tritt auch ein, wenn &quot;\(\sim  (\exists x).\sim f x\)&quot; dasselbe sagt wie &quot;\((x). f x\)&quot;, oder
+&quot;\((\exists x). f x . x = a\)&quot; dasselbe wie &quot;\(fa\)&quot;.</p>
+<p><strong>5.442</strong>
+Wenn uns ein Satz gegeben ist, so sind  m i t  i h m  auch schon die Resultate aller Wahrheitsoperationen, die ihn zur Basis haben, gegeben.</p>
+<p><strong>5.45</strong>
+Gibt es logische Urzeichen, so muss eine richtige Logik ihre Stellung zueinander klar machen und ihr Dasein rechtfertigen.
+Der Bau der Logik  a u s  ihren Urzeichen muss klar werden.</p>
+<p><strong>5.451</strong>
+Hat die Logik Grundbegriffe, so müssen sie von einander unabhängig sein.
+Ist ein Grundbegriff eingeführt, so muss er in allen Verbindungen eingeführt sein, worin er überhaupt vorkommt.
+Man kann ihn also nicht zuerst für  e i n e  Verbindung, dann noch einmal für eine andere einführen.
+Z. B.: Ist die Verneinung eingeführt, so müssen wir sie jetzt in Sätzen von der Form &quot;\(\sim p\)&quot; ebenso verstehen, wie in Sätzen
+wie &quot;\(\sim (p \lor q)\)&quot;, &quot;\((\exists x).\sim f x\)&quot; u. a.
+Wir dürfen sie nicht erst für die eine Klasse von Fällen, dann für die andere einführen, denn es bliebe dann zweifelhaft, ob ihre Bedeutung in beiden Fällen die gleiche wäre und es wäre kein Grund vorhanden, in beiden Fällen dieselbe Art der Zeichenverbindung zu benützen.<br />
+(Kurz, für die Einführung der Urzeichen gilt, mutatis mutandis, dasselbe, was Frege (&quot;Grundgesetze der Arithmetik&quot;) für die Einführung von Zeichen durch Definitionen gesagt hat.)</p>
+<p><strong>5.452</strong>
+Die Einführung eines neuen Behelfes in den Symbolismus der Logik muss immer ein folgenschweres Ereignis sein.
+Kein neuer Behelf darf in die Logik - sozusagen, mit ganz unschuldiger Miene - in Klammern oder unter dem Striche eingeführt werden.<br />
+(So kommen in den &quot;Principia Mathematica&quot; von Russell und Whitehead Definitionen und Grundgesetze in Worten vor.
+Warum hier plötzlich Worte? Dies bedürfte einer Rechtfertigung.
+Sie fehlt und muss fehlen, da das Vorgehen tatsächlich unerlaubt ist.)<br />
+Hat sich aber die Einführung eines neuen Behelfes an einer Stelle als nötig erwiesen, so muss man sich nun sofort fragen:
+Wo muss dieser Behelf nun i m m e r angewandt werden?
+Seine Stellung in der Logik muss nun erklärt werden.</p>
+<p><strong>5.453</strong>
+Alle Zahlen der Logik müssen sich rechtfertigen lassen.<br />
+Oder vielmehr: Es muss sich herausstellen, dass es in der Logik keine Zahlen gibt.<br />
+Es gibt keine ausgezeichneten Zahlen.</p>
+<p><strong>5.454</strong>
+In der Logik gibt es kein Nebeneinander, kann es keine Klassifikation geben.<br />
+In der Logik kann es nicht Allgemeineres und Spezielleres geben.</p>
+<p><strong>5.4541</strong>
+Die Lösungen der logischen Probleme müssen einfach sein, denn sie setzen den Standard der Einfachheit.<br />
+Die Menschen haben immer geahnt, dass es ein Gebiet von Fragen geben müsse, deren Antworten—a priori—symmetrisch, und zu einem  abgeschlossenen, regelmäßigen Gebilde vereint liegen.<br />
+Ein Gebiet, in dem der Satz gilt: simplex sigillum veri.</p>
+<p><strong>5.46</strong>
+Wenn man die logischen Zeichen richtig einführte, so hätte man damit auch schon den Sinn aller ihrer Kombinationen eingeführt; also nicht nur &quot;\(p \lor q\)&quot; sondern auch schon &quot;\(\sim (p \lor \sim q)\)&quot; etc. etc.
+Man hätte damit auch schon die Wirkung aller nur möglichen Kombinationen von Klammern eingeführt.
+Und damit wäre es klar geworden, dass die eigentlichen allgemeinen Urzeichen nicht die &quot;\(p \lor q\)&quot;, &quot;\((\exists x). f x\)&quot;, etc. sind, sondern die allgemeinste Form ihrer Kombinationen.</p>
+<p><strong>5.461</strong>
+Bedeutungsvoll ist die scheinbar unwichtige Tatsache, dass die logischen Scheinbeziehungen, wie \(\lor\) und \(supset\), der Klammern bedürfen - im Gegensatz zu den wirklichen Beziehungen.<br />
+Die Benützung der Klammern mit jenen scheinbaren Urzeichen deutet ja schon darauf hin, dass diese nicht die wirklichen Urzeichen
+sind.
+Und es wird doch wohl niemand glauben, dass die Klammern eine selbständige Bedeutung haben.</p>
+<p><strong>5.4611</strong>
+Die logischen Operationszeichen sind Interpunktionen.</p>
+<p><strong>5.47</strong>
+Es ist klar, dass alles, was sich überhaupt  v o n  v o r n h e r e i n  über die Form aller Sätze sagen lässt, sich  a u f  e i n m a l  sagen lassen muss.<br />
+Sind ja schon im Elementarsatze alle logischen Operationen enthalten. 
+Denn &quot;\(fa\)&quot; sagt dasselbe wie &quot;
+\[(\exists x). f x . x = a\]
+&quot;.
+Wo Zusammengesetztheit ist, da ist Argument und Funktion, und wo diese sind, sind bereits alle logischen Konstanten.<br />
+Man könnte sagen: Die Eine logische Konstante ist das, was a l l e Sätze, ihrer Natur nach, mit einander gemein haben.<br />
+Das aber ist die allgemeine Satzform.</p>
+<p><strong>5.471</strong>
+Die allgemeine Satzform ist das Wesen des Satzes.</p>
+<p><strong>5.4711</strong>
+Das Wesen des Satzes angeben, heißt, das Wesen aller Beschreibung angeben, also das Wesen der Welt.</p>
+<p><strong>5.472</strong>
+Die Beschreibung der allgemeinsten Satzform ist die Beschreibung des einen und einzigen allgemeinen Urzeichens der Logik.</p>
+<p><strong>5.473</strong>
+Die Logik muss für sich selber sorgen.<br />
+Ein m ö g l i c h e s Zeichen muss auch bezeichnen können.
+Alles was in der Logik möglich ist, ist auch erlaubt.
+(&quot;Sokrates ist identisch&quot; heißt darum nichts, weil es keine Eigenschaft gibt, die &quot;identisch&quot; heißt.
+Der Satz ist unsinnig, weil wir eine willkürliche Bestimmung nicht getroffen haben, aber nicht darum, weil das Symbol an und für sich unerlaubt wäre.)<br />
+Wir können uns, in gewissem Sinne, nicht in der Logik irren.</p>
+<p><strong>5.4731</strong>
+Das Einleuchten, von dem Russell so viel sprach, kann nur dadurch in der Logik entbehrlich werden, dass die Sprache selbst jeden logischen Fehler verhindert. -
+Dass die Logik a priori ist, besteht darin, dass nicht unlogisch
+gedacht werden k a n n.</p>
+<p><strong>5.4732</strong>
+Wir können einem Zeichen nicht den unrechten Sinn geben.</p>
+<p><strong>5.47321</strong>
+Occams Devise ist natürlich keine willkürliche, oder durch ihren praktischen Erfolg gerechtfertigte Regel:
+Sie besagt, dass u n n ö t i g e Zeicheneinheiten nichts bedeuten.<br />
+Zeichen, die E i n e n Zweck erfüllen, sind logisch äquivalent, Zeichen, die k e i n e n Zweck erfüllen, logisch bedeutungslos.</p>
+<p><strong>5.4733</strong>
+Frege sagt: Jeder rechtmäßig gebildete Satz muss einen Sinn haben; und ich sage:
+Jeder mögliche Satz ist rechtmäßig gebildet, und wenn er keinen Sinn hat, so kann das nur daran liegen, dass wir einigen seiner Bestandteile keine B e d e u t u n g gegeben haben.<br />
+(Wenn wir auch glauben, es getan zu haben.)<br />
+So sagt &quot;Sokrates ist identisch&quot; darum nichts, weil wir dem Wort &quot;identisch&quot; als E i g e n s c h a f t s w o r t  k e i n e Bedeutung gegeben haben.
+Denn, wenn es als Gleichheitszeichen auftritt, so symbolisiert es auf ganz andere Art und Weise - die bezeichnende Beziehung ist eine andere, - also ist auch das Symbol in beiden Fällen ganz verschieden; die beiden Symbole haben nur das Zeichen zufällig miteinander gemein.</p>
+<p><strong>5.474</strong>
+Die Anzahl der nötigen Grundoperationen hängt n u r von unserer Notation ab.</p>
+<p><strong>5.475</strong>
+Es kommt nur darauf an, ein Zeichensystem von einer bestimmten Anzahl von Dimensionen—von einer bestimmten mathematischen Mannigfaltigkeit—zu bilden.</p>
+<p><strong>5.476</strong>
+Es ist klar, dass es sich hier nicht um eine A n z a h l  v o n  G r u n d b e g r i f f e n handelt, die bezeichnet werden müssen, sondern
+um den Ausdruck einer Regel.</p>
+<p><strong>5.5</strong>
+Jede Wahrheitsfunktion ist ein Resultat der successiven Anwendung der Operation \((− − − − −W) (\xi, . . . . .)\) auf Elementarsätze.<br />
+Diese Operation verneint sämtliche Sätze in der rechten Klammer, und ich nenne sie die Negation dieser Sätze.</p>
+<p><strong>5.501</strong>
+Einen Klammerausdruck, dessen Glieder Sätze sind, deute ich—wenn die Reihenfolge der Glieder in der Klammer gleichgültig ist - durch ein Zeichen von der Form &quot;\((\bar{\xi})\)&quot; an.
+&quot;\(\xi\)&quot; ist eine Variable, deren Werte die Glieder des Klammerausdruckes sind; und der Strich über der Variablen deutet an, dass sie ihre sämtlichen Werte in der Klammer vertritt.<br />
+(Hat also \(\xi\) etwa die 3 Werte \(P, Q, R)\), so ist \((\bar{\xi}) = \bar{(P, Q, R)}\).)<br />
+Die Werte der Variablen werden festgesetzt.<br />
+Die Festsetzung ist die Beschreibung der Sätze, welche die Variable vertritt.<br />
+Wie die Beschreibung der Glieder des Klammerausdruckes geschieht, ist unwesentlich.<br />
+Wir k ö n n e n drei Arten der Beschreibung unterscheiden: </p>
+<ol>
+<li>Die direkte Aufzählung. 
+In diesem Fall können wir statt der Variablen einfach ihre konstanten Werte setzen.</li>
+<li>Die Angabe einer Funktion f x, deren Werte für alle Werte von x die zu beschreibenden Sätze sind.</li>
+<li>Die Angabe eines formalen Gesetzes, nach welchem jene Sätze gebildet sind.
+In diesem Falle sind die Glieder des Klammerausdrucks sämtliche Glieder einer Formenreihe.</li>
+</ol>
+<p><strong>5.502</strong>
+Ich schreibe also statt &quot;\((− − − − −W) (\xi, . . . . .)\)&quot; &quot;\(N(\bar{\xi})\)&quot;.
+\(N(bar{\xi})\) ist die Negation sämtlicher Werte der
+Satzvariablen \(\xi)\.</p>
+<p><strong>5.503</strong>
+Da sich offenbar leicht ausdrücken läßt, wie mit dieser Operation Sätze gebildet werden können und wie Sätze mit ihr nicht zu bilden sind, so muss dies auch einen exakten Ausdruck finden können.</p>
+<p><strong>5.51</strong>
+Hat \(\xi\) nur einen Wert, so ist \(N(\bar{\xi}) = \sim p\) (nicht
+\(p)\), hat es zwei Werte, so ist \(N(\bar{\xi}) = \sim p . \sim q\) (weder \(p\) noch \(q\)).</p>
+<p><strong>5.511</strong>
+Wie kann die allumfassende, weltspiegelnde Logik so spezielle Haken und Manipulationen gebrauchen?
+Nur, indem sich alle diese zu einem unendlich feinen Netzwerk, zu dem großen Spiegel, verknüpfen.</p>
+<p><strong>5.512</strong>
+&quot;\(\sim p\)&quot; ist wahr, wenn &quot;\(p\)&quot; falsch ist.
+Also in dem wahren Satz &quot;\(\sim p\)&quot; ist &quot;\(p\)&quot; ein falscher Satz.
+Wie kann ihn nun der Strich &quot;\sim &quot; mit der Wirklichkeit zum Stimmen bringen?<br />
+Das, was in &quot;\(\sim p\)&quot; verneint, ist aber nicht das &quot;\(\sim \)&quot;, sondern dasjenige, was allen Zeichen dieser Notation, welche \(p\) verneinen, gemeinsam ist.<br />
+Also die gemeinsame Regel, nach welcher &quot;\(\sim p\)&quot;, &quot;\(\sim \sim \sim p\)&quot;, &quot;\(\sim p \lor \sim p\)&quot;, &quot;\(\sim p . \sim p\)&quot;, etc. etc. (ad inf.) gebildet werden.
+Und dies Gemeinsame spiegelt die Verneinung wieder.</p>
+<p><strong>5.513</strong>
+Man könnte sagen: Das Gemeinsame aller Symbole, die sowohl \(p\) als \(q\) bejahen, ist der Satz &quot;\(p . q\)&quot;.
+Das Gemeinsame aller Symbole, die entweder \(p\) oder \(q\) bejahen, ist der Satz &quot;\(p \lor q\)&quot;.
+Und so kann man sagen: Zwei Sätze sind einander entgegengesetzt, wenn sie nichts miteinander gemein haben, und: 
+Jeder Satz hat nur ein Negativ, weil es nur einen Satz gibt, der ganz außerhalb seiner liegt. 
+Es zeigt sich so auch in Russells Notation, dass &quot;\(q : p \lor \sim p\)&quot; dasselbe sagt wie &quot;\(q\)&quot;; dass &quot;\(p \lor \sim p\)&quot; nichts sagt.</p>
+<p><strong>5.514</strong>
+Ist eine Notation festgelegt, so gibt es in ihr eine Regel, nach der alle \(p\) verneinenden Sätze gebildet werden, eine Regel, nach der alle \(p\) bejahenden Sätze gebildet werden, eine Regel, nach der alle \(p\) oder \(q\) bejahenden Sätze gebildet werden, u. s. f.
+Diese Regeln sind den Symbolen äquivalent und in ihnen spiegelt sich ihr Sinn wieder.</p>
+<p><strong>5.515</strong>
+Es muss sich an unseren Symbolen zeigen, dass das, was durch &quot;\(\lor\)&quot;, &quot;\(.\)&quot;, etc. miteinander verbunden ist, Sätze sein müssen.<br />
+Und dies ist auch der Fall, denn das Symbol &quot;\(p\)&quot; und &quot;\(q\)&quot; setzt ja selbst das &quot;\(\lor\)&quot;, &quot;\(\sim \)&quot;, etc. voraus.
+Wenn das Zeichen &quot;\(p\)&quot; in &quot;\(p \lor q\)&quot; nicht für ein komplexes Zeichen steht, dann kann es allein nicht Sinn haben; dann können aber auch die mit &quot;\(p\)&quot; gleichsinnigen Zeichen &quot;\(p \lor p\)&quot;, &quot;\(p . p\)&quot;, etc. keinen Sinn haben. Wenn aber &quot;\(p \lor p\)&quot; keinen Sinn hat, dann kann auch &quot;\(p \lor q\)&quot; keinen Sinn haben.</p>
+<p><strong>5.5151</strong>
+Muss das Zeichen des negativen Satzes mit dem Zeichen des positiven gebildet werden?
+Warum sollte man den negativen Satz nicht durch eine negative Tatsache ausdrücken können.
+(Etwa: Wenn &quot;\(a\)&quot; nicht in einer bestimmten Beziehung zu &quot;\(b\)&quot; steht, könnte das ausdrücken, dass \(aRb\) nicht der Fall ist.)<br />
+Aber auch hier ist ja der negative Satz indirekt durch den positiven gebildet.<br />
+Der positive S a t z muss die Existenz des negativen S a t z e s voraussetzen und umgekehrt.</p>
+<p><strong>5.52</strong>
+Sind die Werte von \(\xi\) sämtliche Werte einer
+Funktion \(f x\) für alle Werte von \(x\), so wird \(N(\bar{\xi}) = \sim (\exists x). f x\).</p>
+<p><strong>5.521</strong>
+Ich trenne den Begriff A l l e von der Wahrheitsfunktion.<br />
+Frege und Russell haben die Allgemeinheit in Verbindung mit dem logischen Produkt oder der logischen Summe eingeführt.
+So wurde es schwer, die Sätze &quot;\((\exists x). f x\)&quot; und &quot;\((x). f x\)&quot;, in welchen beide Ideen beschlossen liegen, zu verstehen.</p>
+<p><strong>5.522</strong>
+Das Eigentümliche der Allgemeinheitsbezeichnung ist erstens, dass sie auf ein logisches Urbild hinweist, und zweitens, dass sie Konstante hervorhebt.</p>
+<p><strong>5.523</strong>
+Die Allgemeinheitsbezeichnung tritt als Argument auf.</p>
+<p><strong>5.524</strong>
+Wenn die Gegenstände gegeben sind, so sind uns damit auch schon a l l e Gegenstände gegeben.<br />
+Wenn die Elementarsätze gegeben sind, so sind damit auch a l l e Elementarsätze gegeben.</p>
+<p><strong>5.525</strong>
+Es ist unrichtig, den Satz &quot;\((\exists x). f x\)&quot; - wie Russell dies tut - in Worten durch &quot;\(f x\) ist m ö g l i c h&quot; wiederzugeben.<br />
+Gewißheit, Möglichkeit oder Unmöglichkeit einer Sachlage wird nicht durch einen Satz ausgedrückt, sondern dadurch, dass ein Ausdruck eine Tautologie, ein sinnvoller Satz oder eine Kontradiktion ist.<br />
+Jener Präzedenzfall, auf den man sich immer berufen möchte, muss schon im Symbol selber liegen.</p>
+<p><strong>5.526</strong>
+Man kann die Welt vollständig durch vollkommen verallgemeinerte Sätze beschreiben, das heißt also, ohne irgendeinen Namen von vornherein einem bestimmten Gegenstand zuzuordnen.<br />
+Um dann auf die gewöhnliche Ausdrucksweise zu kommen, muss man einfach nach einem Ausdruck: &quot;Es gibt ein und nur ein \(x\), welches . . . &quot; sagen: Und dies \(x\) ist \(a\).</p>
+<p><strong>5.5261</strong>
+Ein vollkommen verallgemeinerter Satz ist, wie jeder andere Satz, zusammengesetzt.
+(Dies zeigt sich daran, dass wir in &quot;\((\exists x,\pi).\pi x\)&quot; &quot;\(\pi\)&quot; und &quot;\(x\)&quot; getrennt erwähnen müssen.
+Beide stehen unabhängig in bezeichnenden Beziehungen zur Welt, wie im unverallgemeinerten Satz.)<br />
+Kennzeichen des zusammengesetzten Symbols:
+Es hat etwas mit a n d e r e n Symbolen gemeinsam.</p>
+<p><strong>5.5262</strong>
+Es verändert ja die Wahr- oder Falschheit j e d e s Satzes etwas am allgemeinen Bau der Welt.
+Und der Spielraum, welcher ihrem Bau durch die Gesamtheit der Elementarsätze gelassen wird, ist eben derjenige, welchen die ganz allgemeinen Sätze begrenzen.<br />
+(Wenn ein Elementarsatz wahr ist, so ist damit doch jedenfalls Ein Elementarsatz  m e h r  wahr.)</p>
+<p><strong>5.53</strong>
+Gleichheit des Gegenstandes drücke ich durch Gleichheit des Zeichens aus, und nicht mit Hilfe eines Gleichheitszeichens.
+Verschiedenheit der Gegenstände durch Verschiedenheit der Zeichen.</p>
+<p><strong>5.5301</strong>
+Dass die Identität keine Relation zwischen Gegenständen ist, leuchtet ein.
+Dies wird sehr klar, wenn man z. B. den Satz &quot;\((x): f x .\supset . x = a\)&quot; betrachtet.
+Was dieser Satz sagt, ist einfach, dass  n u r  \(a\) der Funktion \(f\) genügt, und nicht, dass nur solche Dinge der Funktion \(f\) genügen, welche eine gewisse Beziehung zu a haben.<br />
+Man könnte nun freilich sagen, dass eben n u r \(a\) diese Beziehung zu \(a\) habe, aber, um dies auszudrücken, brauchten wir das Gleichheitszeichen selber.</p>
+<p><strong>5.5302</strong>
+Russells Definition von &quot;\(=\)&quot; genügt nicht; weil man nach ihr nicht sagen kann, dass zwei Gegenstände alle Eigenschaften gemeinsam haben.
+(Selbst wenn dieser Satz nie richtig ist, hat er doch S i n n.)</p>
+<p><strong>5.5303</strong>
+Beiläufig gesprochen: Von z w e i Dingen zu sagen, sie seien identisch, ist ein Unsinn, und von E i n e m zu sagen, es sei identisch
+mit sich selbst, sagt gar nichts.</p>
+<p><strong>5.531</strong>
+Ich schreibe also nicht &quot;\(f (a,b) . a = b\)&quot;, sondern &quot;\(f (a,a)\)&quot; (oder &quot;\(f (b,b)\)&quot;).
+Und nicht &quot;\(f (a,b) . \sim a = b\)&quot;, sondern &quot;\(f (a,b)\)&quot;.</p>
+<p><strong>5.532</strong>
+Und analog: Nicht &quot;\((\exists x, y). f (x, y) . x = y\)&quot;, sondern &quot;\((\exists x). f (x, x)\)&quot;; und nicht &quot;\((\exists x, y). f (x, y) . \sim x = y\)&quot;, sondern &quot;\((\exists x, y). f (x, y)\)&quot;.<br />
+(Also statt des Russellschen &quot;\((\exists x, y). f (x, y)\)&quot;: &quot;\((\exists x, y). f (x, y) .\lor . (\exists x). f (x, x)\)&quot;.)</p>
+<p><strong>5.5321</strong>
+Statt &quot;\((x): f x \supset  x = a\)&quot; schreiben wir also z. B. &quot;\((\exists x). f x .\supset . fa : \sim (\exists x, y). f x . f y\)&quot;.<br />
+Und der Satz: &quot;n u r Ein \(x\) befriedigt \(f ( )\)&quot; lautet: &quot;\((\exists x). f x .\supset . fa : \sim (\exists x, y). f x . f y\)&quot;.</p>
+<p><strong>5.533</strong>
+Das Gleichheitszeichen ist also kein wesentlicher Bestandteil der Begriffsschrift.</p>
+<p><strong>5.534</strong>
+Und nun sehen wir, dass Scheinsätze wie: &quot;\(a = a\)&quot;, &quot;\(a = b . b = c .\supset  a = c\)&quot;, &quot;\((x). x = x\)&quot;, &quot;\((\exists x). x = a\)&quot;, etc. sich in einer richtigen Begriffsschrift gar nicht hinschreiben lassen.</p>
+<p><strong>5.535</strong>
+Damit erledigen sich auch alle Probleme, die an solche Scheinsätze geknüpft waren.<br />
+Alle Probleme, die Russells &quot;Axiom of Infinity&quot; mit sich bringt, sind schon hier zu lösen.<br />
+Das, was das Axiom of Infinity sagen soll, würde sich in der Sprache dadurch ausdrücken, dass es unendlich viele Namen mit verschiedener Bedeutung gäbe.</p>
+<p><strong>5.5351</strong>
+Es gibt gewisse Fälle, wo man in Versuchung gerät, Ausdrücke von der Form &quot;\(a = a\)&quot; oder &quot;\(p \supset  p\)&quot; u. dgl. zu benützen.
+Und zwar geschieht dies, wenn man von dem Urbild: Satz, Ding, etc. reden möchte.
+So hat Russell in den &quot;Principles of Mathematics&quot; den Unsinn &quot;\(p\) ist ein Satz&quot; in Symbolen durch &quot;\(p \supset p\)&quot; wiedergegeben und als Hypothese vor gewisse Sätze gestellt, damit deren Argumentstellen nur von Sätzen besetzt werden könnten.<br />
+(Es ist schon darum Unsinn, die Hypothese \(p \supset p\) vor einen Satz zu stellen, um ihm Argumente der richtigen Form zu sichern, weil die Hypothese für einen Nicht-Satz als Argument nicht falsch, sondern unsinnig wird, und weil der Satz selbst durch die unrichtige Gattung von Argumenten unsinnig wird, also sich selbst ebenso gut, oder so schlecht, vor den unrechten Argumenten bewahrt wie die zu diesem Zweck angehängte sinnlose Hypothese.)</p>
+<p><strong>5.5352</strong>
+Ebenso wollte man &quot;Es gibt keine D i n g e&quot; ausdrücken durch &quot;\(\sim (\exists x). x = x\)&quot;.
+Aber selbst wenn dies ein Satz wäre - wäre er nicht auch wahr, wenn es zwar &quot;Dinge gäbe&quot;, aber diese nicht mit sich selbst identisch wären?</p>
+<p><strong>5.54</strong>
+In der allgemeinen Satzform kommt der Satz im Satze nur als Basis der Wahrheitsoperationen vor.</p>
+<p><strong>5.541</strong>
+Auf den ersten Blick scheint es, als könne ein Satz in einem anderen auch auf andere Weise vorkommen.<br />
+Besonders in gewissen Satzformen der Psychologie, wie &quot;\(A\) glaubt, dass \(p\) der Fall ist&quot;, oder &quot;\(A\) denkt \(p\)&quot;, etc.<br />
+Hier scheint es nämlich oberflächlich, als stünde der Satz \(p\) zu einem Gegenstand \(A\) in einer Art von Relation.<br />
+(Und in der modernen Erkenntnistheorie (Russell, Moore, etc.) sind jene Sätze auch so aufgefasst worden.)</p>
+<p><strong>5.542</strong>
+Es ist aber klar, dass &quot;\(A\) glaubt, dass \(p\)&quot;, &quot;\(A\) denkt \(p\)&quot;, &quot;\(A\) sagt \(p\)&quot; von der Form &quot;'\(p\)' sagt \(p\)&quot; sind: Und hier handelt es sich nicht um eine Zuordnung von einer Tatsache und einem Gegenstand, sondern um die Zuordnung von Tatsachen durch Zuordnung ihrer Gegenstände.</p>
+<p><strong>5.5421</strong>
+Dies zeigt auch, dass die Seele - das Subjekt etc. - wie sie in der heutigen oberflächlichen Psychologie aufgefasst wird, ein Unding ist.<br />
+Eine zusammengesetzte Seele wäre nämlich keine Seele mehr.</p>
+<p><strong>5.5422</strong>
+Die richtige Erklärung der Form des Satzes &quot;\(A\) urteilt \(p\)&quot; muss zeigen, dass es unmöglich ist, einen Unsinn zu urteilen.
+(Russells Theorie genügt dieser Bedingung nicht.)</p>
+<p><strong>5.5423</strong>
+Einen Komplex wahrnehmen heißt wahrnehmen, dass sich seine Bestandteile so und so zu einander verhalten.<br />
+Dies erklärt wohl auch, dass man die Figur</p>
+<p><img src="cube.png" alt="" /></p>
+<p>auf zweierlei Art als Würfel sehen kann; und alle ähnlichen Erscheinungen.
+Denn wir sehen eben wirklich zwei verschiedene Tatsachen.<br />
+(Sehe ich erst auf die Ecken \(a\) und nur flüchtig auf \(b\), so erscheint \(a\) vorne; und umgekehrt.)</p>
+<p><strong>5.55</strong>
+Wir müssen nun die Frage nach allen möglichen Formen der Elementarsätze a priori beantworten.<br />
+Der Elementarsatz besteht aus Namen.
+Da wir aber die Anzahl der Namen von verschiedener Bedeutung nicht angeben können, so können wir auch nicht die Zusammensetzung des Elementarsatzes angeben.</p>
+<p><strong>5.551</strong>
+Unser Grundsatz ist, dass jede Frage, die sich überhaupt durch die Logik entscheiden läßt, sich ohne weiteres entscheiden lassen muss.<br />
+(Und wenn wir in die Lage kommen, ein solches Problem durch Ansehen der Welt beantworten zu müssen, so zeigt dies, dass wir auf grundfalscher Fährte sind.)</p>
+<p><strong>5.552</strong>
+Die &quot;Erfahrung&quot;, die wir zum Verstehen der Logik brauchen, ist nicht die, dass sich etwas so und so verhält, sondern, dass etwas i s t: aber das ist eben k e i n e Erfahrung.<br />
+Die Logik ist v o r jeder Erfahrung - dass etwas s o ist.<br />
+Sie ist vor dem Wie, nicht vor dem Was.</p>
+<p><strong>5.5521</strong>
+Und wenn dies nicht so wäre, wie könnten wir die Logik anwenden?
+Man könnte sagen: Wenn es eine Logik gäbe, auch wenn es keine Welt gäbe, wie könnte es dann eine Logik geben, da es eine Welt gibt?</p>
+<p><strong>5.553</strong>
+Russell sagte, es gäbe einfache Relationen zwischen verschiedenen Anzahlen von Dingen (Individuals).
+Aber zwischen welchen Anzahlen?
+Und wie soll sich das entscheiden? - 
+Durch die Erfahrung?<br />
+(Eine ausgezeichnete Zahl gibt es nicht.)</p>
+<p><strong>5.554</strong>
+Die Angabe jeder speziellen Form wäre vollkommen willkürlich.</p>
+<p><strong>5.5541</strong>
+Es soll sich a priori angeben lassen, ob ich z. B. in die Lage kommen kann, etwas mit dem Zeichen einer 27-stelligen Relation bezeichnen zu müssen.</p>
+<p><strong>5.5542</strong>
+Dürfen wir denn aber überhaupt so fragen?
+Können wir eine Zeichenform aufstellen und nicht wissen, ob ihr etwas entsprechen könne?<br />
+Hat die Frage einen Sinn: Was muss s e i n, damit etwas der-Fall-sein kann?</p>
+<p><strong>5.555</strong>
+Es ist klar, wir haben vom Elementarsatz einen Begriff, abgesehen von seiner besonderen logischen Form.<br />
+Wo man aber Symbole nach einem System bilden kann, dort ist dieses System das logisch wichtige und nicht die einzelnen Symbole.<br />
+Und wie wäre es auch möglich, dass ich es in der Logik mit Formen zu tun hätte, die ich erfinden kann; sondern mit dem muss ich es zu tun haben, was es mir möglich macht, sie zu erfinden.</p>
+<p><strong>5.556</strong>
+Eine Hierarchie der Formen der Elementarsätze kann es nicht geben.
+Nur was wir selbst konstruieren, können wir voraussehen.</p>
+<p><strong>5.5561</strong>
+Die empirische Realität ist begrenzt durch die Gesamtheit der Gegenstände.
+Die Grenze zeigt sich wieder in der Gesamtheit der Elementarsätze.<br />
+Die Hierarchien sind, und müssen unabhängig von der Realität sein.</p>
+<p><strong>5.5562</strong>
+Wissen wir aus rein logischen Gründen, dass es Elementarsätze geben muss, dann muss es jeder wissen, der die Sätze in ihrer unanalysierten Form versteht.</p>
+<p><strong>5.5563</strong>
+Alle Sätze unserer Umgangssprache sind tatsächlich, so wie sie sind, logisch vollkommen geordnet. -
+Jenes Einfachste, was wir hier angeben sollen, ist nicht ein Gleichnis der Wahrheit, sondern die volle Wahrheit selbst.<br />
+(Unsere Probleme sind nicht abstrakt, sondern vielleicht die konkretesten, die es gibt.)</p>
+<p><strong>5.557</strong>
+Die A n w e n d u n g der Logik entscheidet darüber, welche Elementarsätze es gibt.<br />
+Was in der Anwendung liegt, kann die Logik nicht vorausnehmen.<br />
+Das ist klar: Die Logik darf mit ihrer Anwendung nicht kollidieren.<br />
+Aber die Logik muss sich mit ihrer Anwendung berühren.<br />
+Also dürfen die Logik und ihre Anwendung einander nicht übergreifen.</p>
+<p><strong>5.5571</strong>
+Wenn ich die Elementarsätze nicht a priori angeben kann, dann muss es zu offenbarem Unsinn führen, sie angeben zu wollen.</p>
+<p><strong>5.6</strong>
+D i e  G r e n z e n  m e i n e r  S p r a c h e bedeuten die Grenzen meiner Welt.</p>
+<p><strong>5.61</strong>
+Die Logik erfüllt die Welt; die Grenzen der Welt sind auch ihre Grenzen.<br />
+Wir können also in der Logik nicht sagen:
+Das und das gibt es in der Welt, jenes nicht.<br />
+Das würde nämlich scheinbar voraussetzen, dass wir gewisse Möglichkeiten ausschließen, und dies kann nicht der Fall sein, da sonst die Logik über die Grenzen der Welt hinaus müsste; wenn sie nämlich diese Grenzen auch von der anderen Seite betrachten könnte.<br />
+Was wir nicht denken können, das können wir nicht denken; wir können also auch nicht s a g e n, was wir nicht denken können.</p>
+<p><strong>5.62</strong>
+Diese Bemerkung gibt den Schlüssel zur Entscheidung der Frage, inwieweit der Solipsismus eine Wahrheit ist.<br />
+Was der Solipsismus nämlich m e i n t, ist ganz richtig, nur lässt es sich nicht s a g e n, sondern es zeigt sich.<br />
+Dass die Welt m e i n e Welt ist, das zeigt sich darin, dass die Grenzen d e r Sprache (der Sprache, die allein ich verstehe) die Grenzen m e i n e r Welt bedeuten.</p>
+<p><strong>5.621</strong>
+Die Welt und das Leben sind Eins.</p>
+<p><strong>5.63</strong>
+Ich bin meine Welt. (Der Mikrokosmos.)</p>
+<p><strong>5.631</strong>
+Das denkende, vorstellende, Subjekt gibt es nicht.<br />
+Wenn ich ein Buch schriebe &quot;Die Welt, wie ich sie vorfand&quot;, so wäre darin auch über meinen Leib zu berichten und zu sagen, welche Glieder meinem Willen unterstehen und welche nicht, etc., dies ist nämlich eine Methode, das Subjekt zu isolieren, oder vielmehr zu zeigen, dass es in einem wichtigen Sinne kein Subjekt gibt: 
+Von ihm allein nämlich könnte in diesem Buche n i c h t die Rede sein.—</p>
+<p><strong>5.632</strong>
+Das Subjekt gehört nicht zur Welt, sondern es ist eine Grenze der Welt.</p>
+<p><strong>5.633</strong>
+Wo i n der Welt ist ein metaphysisches Subjekt zu merken?<br />
+Du sagst, es verhält sich hier ganz wie mit Auge und Gesichtsfeld.
+Aber das Auge siehst du wirklich n i c h t.<br />
+Und nichts a m G e s i c h t s f e l d lässt darauf schließen, dass es von einem Auge gesehen wird.</p>
+<p><strong>5.6331</strong>
+Das Gesichtsfeld hat nämlich nicht etwa eine solche Form:</p>
+<p><img src="eye.png" alt="" /></p>
+<p><strong>5.634</strong>
+Das hängt damit zusammen, dass kein Teil unserer Erfahrung auch a priori ist.<br />
+Alles, was wir sehen, könnte auch anders sein.<br />
+Alles, was wir überhaupt beschreiben können, könnte auch anders sein.<br />
+Es gibt keine Ordnung der Dinge a priori.</p>
+<p><strong>5.64</strong>
+Hier sieht man, dass der Solipsismus, streng durchgeführt, mit dem reinen Realismus zusammenfällt.
+Das Ich des Solipsismus schrumpft zum ausdehnungslosen Punkt zusammen, und es bleibt die ihm koordinierte Realität.</p>
+<p><strong>5.641</strong>
+Es gibt also wirklich einen Sinn, in welchem in der Philosophie nichtpsychologisch vom Ich die Rede sein kann.<br />
+Das Ich tritt in die Philosophie dadurch ein, dass &quot;die Welt meine Welt ist&quot;.<br />
+Das philosophische Ich ist nicht der Mensch, nicht der menschliche Körper, oder die menschliche Seele, von der die Psychologie handelt, sondern das metaphysische Subjekt, die Grenze - nicht ein Teil - der Welt.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="Satz 4.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="Satz 6.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="Satz 4.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="Satz 6.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_line_numbers = true;
+        </script>
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

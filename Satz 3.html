@@ -1,0 +1,414 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Satz 3 - Tractatus Logico-Philosophicus</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><a href="Vorwort.html">Vorwort</a></li><li class="spacer"></li><li class="chapter-item "><a href="Satz 1.html"><strong aria-hidden="true">1.</strong> Satz 1</a></li><li class="chapter-item "><a href="Satz 2.html"><strong aria-hidden="true">2.</strong> Satz 2</a></li><li class="chapter-item expanded "><a href="Satz 3.html" class="active"><strong aria-hidden="true">3.</strong> Satz 3</a></li><li class="chapter-item "><a href="Satz 4.html"><strong aria-hidden="true">4.</strong> Satz 4</a></li><li class="chapter-item "><a href="Satz 5.html"><strong aria-hidden="true">5.</strong> Satz 5</a></li><li class="chapter-item "><a href="Satz 6.html"><strong aria-hidden="true">6.</strong> Satz 6</a></li><li class="chapter-item "><a href="Satz 7.html"><strong aria-hidden="true">7.</strong> Satz 7</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Tractatus Logico-Philosophicus</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/moenarch/wittgenstein-tractatus-logico-philosophicus/tree/main" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/moenarch/wittgenstein-tractatus-logico-philosophicus/edit/main/src/Satz 3.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="dritter-satz"><a class="header" href="#dritter-satz">Dritter Satz</a></h1>
+<p>Das logische Bild der Tatsachen ist der Gedanke.</p>
+<p><strong>3.001</strong>
+&quot;Ein Sachverhalt ist denkbar&quot; heißt: Wir können uns ein Bild von ihm machen.</p>
+<p><strong>3.01</strong>
+Die Gesamtheit der wahren Gedanken sind ein Bild der Welt.</p>
+<p><strong>3.02</strong>
+Der Gedanke enthält die Möglichkeit der Sachlage, die er denkt.
+Was denkbar ist, ist auch möglich.</p>
+<p><strong>3.03</strong>
+Wir können nichts Unlogisches denken, weil wir sonst unlogisch denken müssten.</p>
+<p><strong>3.031</strong>
+Man sagte einmal, dass Gottes alles schaffen könne, nur nichts, was den logischen Gesetzen zuwider wäre. - Wir können nämlich von einer &quot;unlogischen&quot; Welt nicht  s a g e n, wie sie aussähe.</p>
+<p><strong>3.032</strong>
+Etwas &quot;der Logik widersprechendes&quot; in der Sprache darstellen, kann man ebensowenig, wie in der Geometrie eine den Gesetzen des Raumes widersprechende Figur durch ihre Koordinaten darstellen; oder die Koordinaten eines Punktes angeben, welcher nicht existiert.</p>
+<p><strong>3.0321</strong>
+Wohl können wir einen Sachverhalt räumlich darstellen, welcher den Gesetzen der Physik, aber keinen, der den Gesetzen der Geometrie zuwiderliefe.</p>
+<p><strong>3.04</strong>
+Ein a priori richtiger Gedanke wäre ein solcher, dessen Möglichkeit seine Wahrheit bedingte.</p>
+<p><strong>3.05</strong>
+Nur so könnten wir a priori wissen, dass ein Gedanke wahr ist, wenn aus dem Gedanken selbst (ohne Vergleichsobjekt) seine Wahrheit zu erkennen wäre.</p>
+<p><strong>3.1</strong>
+Im Satz drückt sich der Gedanke sinnlich wahrnehmbar aus.</p>
+<p><strong>3.11</strong>
+Wir benützen das sinnlich wahrnehmbare Zeichen (Laut- oder Schriftzeichen etc.) des Satzes als Projektion der möglichen Sachlage.<br />
+Die Projektionsmethode ist das Denken des Satz-Sinnes.</p>
+<p><strong>3.12</strong>
+Das Zeichen, durch welches wir den Gedanken ausdrücken, nenne ich das Satzzeichen in seiner projektiven Beziehung zur Welt.</p>
+<p><strong>3.13</strong>
+Zum Satz gehört alles, was zur Projektion gehört; aber nicht ds Projizierte.<br />
+Also die Möglichkeit des Projizierten, aber nicht dieses selbst.<br />
+Im Satz ist also sein Sinn noch nicht enthalten, wohl aber die Möglichkeit, ihn auszudrücken.<br />
+(&quot;Der Inhalt des Satzes&quot; heißt der Inhalt des sinnvollen Satzes.)<br />
+Im Satz ist die Form seines Sinnes enthalten, aber nicht dessen Inhalt.</p>
+<p><strong>3.14</strong>
+Das Satzzeichen besteht darin, dass sich seine Elemente, die Wörter, in ihm auf bestimmte Art und Weise zu einander verhalten.<br />
+Das Satzzeichen ist eine Tatsache.</p>
+<p><strong>3.141</strong>
+Der Satz ist kein Wörtergemisch. -
+(Wie das musikalische Thema kein Gemisch von Tönen.)<br />
+Der Satz ist artikuliert.</p>
+<p><strong>3.142</strong>
+Nur Tatsachen können einen Sinn ausdrücken, eine Klasse von Namen kann es nicht.</p>
+<p><strong>3.143</strong>
+Dass das Satzzeichen eine Tatsache ist, wird durch die gewöhnliche Ausdrucksform der Schrift oder des Druckes verschleiert.<br />
+Denn im gedruckten Satz z. B. sieht das Satzzeichen nicht wesentlich verschieden aus vom Wort.<br />
+(So war es möglich, dass Frege den Satz einen zusammengesetzten Namen nannte.)</p>
+<p><strong>3.1431</strong>
+Sehr klar wir das Wesen des Satzzeichens, wenn wir es uns, statt aus Schriftzeichen, aus räumlichen Gegenständen (etwa Tischen, Stühlen, Büchern) zusammengesetzt denken.<br />
+Die gegenseitige räumliche Lage dieser Dinge drückt dann den Sinn des Satzes aus.</p>
+<p><strong>3.1432</strong>
+Nicht: &quot;Das komplexe Zeichen '\(aRb\)' sagt, dass \(a\) in der Beziehung \(R\) zu \(b\) steht&quot;, sondern:  D a s s  &quot;\(a\)&quot; in einer gewissen Beziehung zu &quot;\(b\)&quot; steht, sagt,  d a s s  \(aRb\).</p>
+<p><strong>3.144</strong>
+Sachlagen kann man beschreiben, nicht  b e n e n n e n.<br />
+(Namen gleichen Punkten, Sätze Pfeilen, sie haben Sinn.)</p>
+<p><strong>3.2</strong>
+Im Satze kann der Gedanke so ausgedrückt sein, dass den Gegenständen des Gedankens Elemente des Satzzeichens entsprechen.</p>
+<p><strong>3.201</strong>
+Diese Elemente nenne ich &quot;einfache Zeichen&quot; und den Satz &quot;vollständig analysiert&quot;.</p>
+<p><strong>3.202</strong>
+Die im Satze angewandten einfachen Zeichen heißen Namen.</p>
+<p><strong>3.203</strong>
+Der Name bedeutet den Gegenstand.
+Der Gegenstand ist seine Bedeutung.
+(&quot;\(A\) ist dasselbe Zeichen wie &quot;\(A\)&quot;.)</p>
+<p><strong>3.21</strong>
+Der Konfiguration der einfachen Zeichen im Satzzeichen entspricht die Konfiguration der Gegenstände in der Sachlage.</p>
+<p><strong>3.22</strong>
+Der Name vertritt im Satz den Gegenstand.</p>
+<p><strong>3.221</strong>
+Die Gegenstände kann ich nur  n e n n e n.
+Zeichen vertreten sie.
+Ich kann nur  v o n  ihnen sprechen,  s i e  a u s s p r e c h e n  kann ich nicht.
+Ein Satz kann nur sagen,  w i e  ein Ding ist, nicht  w a s  es ist.</p>
+<p><strong>3.23</strong>
+Die Forderung der Möglichkeit der einfachen Zeichen ist die Forderung der Bestimmtheit des Sinnes.</p>
+<p><strong>3.24</strong>
+Der Satz, welcher vom Komplex handelt, steht in interner Beziehung zum Satze, der von dessen Bestandteil handelt.<br />
+Der Komplex kann nur durch seine Beschreibung gegeben sein, und diese wird stimmen oder nicht stimmen.
+Der Satz, in welchem von einem Komplex die Rede ist, wird, wenn dieser nicht existiert, nicht unsinnig, sondern einfach falsch sein.<br />
+Dass ein Satzelement einen Komplex bezeichnet, kann man aus einer Unbestimmtheit in den Sätzen sehen, worin es vorkommt.
+Wir  w i s s e n, durch diesen Satz ist noch nicht alles bestimmt.
+(Die Allgemeinheitsbeziehung  e n t h ä l t  ja ein Urbild.)<br />
+Die Zusammenfassung des Symbols eines Komplexes in ein einfaches Symbol kann durch eine Definition ausgedrückt werden.</p>
+<p><strong>3.25</strong>
+Es gibt eine und nur eine vollständige Analyse des Satzes.</p>
+<p><strong>3.251</strong>
+Der Satz drückt auf bestimmte, klar angebbare Weise aus, was er ausdrückt: Der Satz ist artikuliert.</p>
+<p><strong>3.26</strong>
+Der Name ist durch keine Definition weiter zu zergliedern: er ist ein Urzeichen.</p>
+<p><strong>3.261</strong>
+Jedes definierte Zeichen bezeichnet  ü b e r  jene Zeichen, durch welche es definiert wurde; und die Definitionen weisen den Weg.<br />
+Zwei Zeichen, ein Urzeichen, und ein durch Urzeichen definiertes, können nicht auf diesselbe Art und Weise bezeichnen.
+Namen  k a n n  man nicht durch Definition auseinanderlegen.
+(Kein zeichen, welches allein, selbstständig eine Bedeutung hat.)</p>
+<p><strong>3.262</strong>
+Was in den Zeichen nicht zum Ausdruck kommt, das zeigt ihre Anwendung.
+Was die Zeichen verschlucken, das spricht ihre Anwendung aus.</p>
+<p><strong>3.263</strong>
+Die Bedeutungen von Urzeichen können durch Erläuterungen erklärt werden.
+Erläuterungen sind Sätze, welche die Urzeichen enthalten.
+Sie können also nur verstanden werden, wenn die Bedeutungen dieser Zeichen bereits bekannt sind.</p>
+<p><strong>3.3</strong>
+Nur der Satz hat Sinn; nur im Zusammenhang des Satzes hat ein Name Bedeutung.</p>
+<p><strong>3.31</strong>
+Jeden Teil des Satzes, der seinen Sinn charakterisiert, nenne ich einen Ausdruck (ein Symbol).<br />
+(Der Satz selsbt ist ein Ausdruck.)<br />
+Ausdruck ist alles, für den Sinn des Satzes wesentliche, was Sätze miteinander gemein haben können.<br />
+Der Ausdruck kennzeichnet eine Form und einen Inhalt.</p>
+<p><strong>3.311</strong>
+Der Ausdruck setztdie Formen aller Sätze voraus, in welchen er vorkommen kann.
+Er ist das gemeinsame charakteristische Merkmal einer Klasse von Sätzen.</p>
+<p><strong>3.312</strong>
+Er wird also dargestellt durch die allgemeine Form der Sätze, die er charakterisiert.<br />
+Und zwar wird in dieser Form der Ausdruck  k o n s t a n t  und alles übrige  v a r i a b e l  sein.</p>
+<p><strong>3.313</strong>
+Der Ausdruck wird also durch eine Variable dargestellt, deren Werte die Sätze sind, die den Ausdruck enthalten.<br />
+(Im Grenzfall wird die Variable zur Konstanten, der Ausdruck zum Satz.)<br />
+Ich nenne eine solche Variable &quot;Satzvariable&quot;.</p>
+<p><strong>3.314</strong>
+Der Ausdruck hat nur im Satz Bedeutung.
+Jede Variable lässt sich als Satzvariable auffassen.<br />
+(Auch der variable Name.)</p>
+<p><strong>3.315</strong>
+Verwandeln wir einen Bestandteil eines Satzes in eine Variable, so gibt es eine Klasse von Sätzen, welche sämtlich Werte des so entstandenen variablen Satzes sind.
+Diese Klasse hängt im allgemeinen noch davon ab, was wir, nach willkürlicher Übereinkunft, mit Teilen jenes Satzes meinen.
+Verwandeln wir aber alle jene Zeichen, deren Bedeutung willkürlich bestimmt wurde, in Variable, so gibt es nun noch immer eine solche Klasse.
+Diese aber ist nun von keiner Übereinkunft abhängig, sondern nu noch von der Natur des Satzes.
+Sie entspricht einer logischen Form - einem logischen Urbild.</p>
+<p><strong>3.316</strong>
+Welche Werte die Satzvariable annehmen darf, wird festgesetzt.
+Die Festsetzung der Werte  i s t  die Variable.</p>
+<p><strong>3.317</strong>
+Die Festsetzung der Werte der Satzvariablen ist die A n g a b e  d e r  S ä t z e, deren gemeinsames Merkmal die Variable ist.<br />
+Die Festsetzung ist eine Beschreibung dieser Sätze.<br />
+Die Festsetzung wird also nur von Symbolen, nicht von deren Bedeutung handeln.<br />
+Und  n u r  dies ist der Festsetzung wesentlich, d a s s  s i e  n u r  B e s c h r e i b u n g  v o n  S y m b o l e n  i s t  u n d  n i c h t s  ü b e r  d a s  B e z e i c h n e t e  a u s s a g t.<br />
+Wie die Beschreibung der Sätze geschieht, ist unwesentlich.</p>
+<p><strong>3.318</strong>
+Den satz fasse ich - wie Frege und Russell - als Funktion der in ihm enthaltenen Ausrücke auf.</p>
+<p><strong>3.32</strong>
+Das Zeichen ist das sinnlich Wahrnehmbare am Symbol.</p>
+<p><strong>3.321</strong>
+Zwei verschiedene Symbole können also das Zeichen (Schriftzeichen oder Lautzeichen etc.) miteinander gemein haben - sie bezeichnen dann auf verschiedene Art und Weise.</p>
+<p><strong>3.322</strong>
+Es kann nie das gemeinsame Merkmal zweier Gegenstände anzeigen, dass wir sie mit demselben Zeichen, aber durch zwei verschiedene  B e z e i c h n u n g s w e i s e n  bezeichnen.
+Denn das Zeichen ist ja willkürlich.
+Man könnte also auch zwei verschiedene Zeichen wählen, und wo bliebe dann das Gemeinsame in der Bezeichnung?</p>
+<p><strong>3.323</strong>
+In der Umgangssprache kommt es ungemein häufig vor, dass dasselbe Wort auf verschiedene Art und Weise bezeichnet - also verschiedenen Symbolen angehört -, oder, dass zwei Wörter, die auf verschiedene Art und Weise bezeichnen, äußerlich in der gleichen Weise im Satz angewandt werden.<br />
+So erscheint das Wort &quot;ist&quot; als Kopula, als Gleichheitszeichen und als Ausdruck der Existenz: &quot;existieren&quot; als intransitives Zeitwort wie &quot;gehen&quot;; &quot;identisch&quot; als Eigenschaftswort; wir reden von  E t w a s, aber auch davon, dass  e t w a s  geschieht.<br />
+(Im Satze &quot;Grün ist grün&quot; - wo das erste Wort ein Personenname, das letzte ein Eigenschaftswort ist - haben diese Worte nicht einfach verschiedene Bedeutung sondern es sind  v e r s c h i e d e n e  S y m b o l e.)</p>
+<p><strong>3.324</strong>
+So entstehen leicht die fundamentalsten Verwechslungen (deren die ganze Philosophie voll ist).</p>
+<p><strong>3.325</strong>
+Um diesen Irrtümern zu entgehen, müssen wir eine Zeichensprache verwenden, welche sie ausschließt, indem sie nicht das gleiche Zeichen in verschiedenen Symbolen, und Zeichen, welche auf verschiedene Art bezeichnen, nicht äußerlich auf die gleiche Art verwendet.
+Eine Zeichensprache also, die der  l o g i s c h e n  Grammatik - der logischen Syntax - gehorcht.<br />
+(Die Begriffsschrift Freges und Russells ist eine solche Sprache, die allerdings noch nicht alle Fehler ausschließt.)</p>
+<p><strong>3.326</strong>
+Um das Symbol am Zeichen zu erkennen, muss man auf den sinnvollen Gebrauch achten.</p>
+<p><strong>3.327</strong>
+Das Zeichen bestimmt erst mit seiner logisch-syntaktischen Verwendung zusammen eine logische Form.</p>
+<p><strong>3.328</strong>
+Wird ein Zeichen  n i c h t  g e b r a u c h t, so ist es bedeutungslos.
+Das ist der Sinn der Devise Occams.<br />
+(Wenn sich alles so verhält als hätte ein Zeichen Bedeutung, dann hat es auch Bedeutung.)</p>
+<p><strong>3.33</strong>
+In der logischen Syntax darf nie die Bedeutung eines Zeichens eine Rolle spielen; sie muss sich aufstellen lassen, ohne dass dabei von der  B e d e u t u n g  eines Zeichens die Rede wäre, sie darf  n u r  die Beschreibung der Ausdrücke voraussetzen.</p>
+<p><strong>3.331</strong>
+Von dieser Bemerkung sehen wir in Russells &quot;Theory of types&quot; hinüber:
+Der Irrtum Russells zeigt sich darin, dass er bei der Aufstellung der Zeichenregeln von der Bedeutung der Zeichen reden musste.</p>
+<p><strong>3.332</strong>
+Kein Satz kann etwas über sich selbst aussagen, weil das Satzzeichen nicht in sich selbst enthalten sein kann (das ist die ganze &quot;Theory of types&quot;).</p>
+<p><strong>3.333</strong>
+Eine Funktion kann darum nicht ihr eigenes Argument sein, weil das Funktionszeichen bereits das Urbild seines Arguments enthält und es sich nicht selbst enthalten kann.<br />
+Nehmen wir nämlich an, die Funktion \(F(fx)\) könnte ihr eigenes Argument sein; dann gäbe es also ein Satz: &quot;\(F(F(fx))\)&quot; und in diesem müssen die äußere Funktion \(F\) und die innere Funktion \(F\) verschiedene Bedeutungen haben, denn die innere hat die Form \(\phi (fx)\), die äußere die Form \(\omega (\phi (fx))\).
+Gemeinsam ist den beiden Funktionen nur der Buchstabe &quot;\(F\)&quot;, der aber allein nichts bezeichnet.<br />
+Dies wird sofort klar, wenn wir statt &quot;\(F(Fu)\)&quot; schreiben &quot;\((\exists \phi): F(\phi u). \phi u = F u\)&quot;.<br />
+Hiermit erledigt sich Russells Paradox.</p>
+<p><strong>3.334</strong>
+Die Regeln der logischen Syntax müssen sich von selbst verstehen, wenn man nur weiß, wie ein jedes Zeichen bezeichnet.</p>
+<p><strong>3.34</strong>
+Der Satz besitzt wesentliche und zufällige Züge.<br />
+Zufällig sind die Züge, die von der besonderen Art der Hervorbringung des Satzzeichens herrühren.
+Wesentlich diejenigen, welche allein den Satz befähigen, seinen Sinn auszudrücken.</p>
+<p><strong>3.341</strong>
+Das Wesentliche am Satz ist also das, was allen Sätzen, welche den gleichen Sinn ausdrücken können, gemeinsam ist.<br />
+Und ebenso ist allgemein das Wesentliche am Symbol das, was alle Symbole, die denselben Zweck erfüllen können, gemeinsam haben.</p>
+<p><strong>3.3411</strong>
+Man könnte also sagen: Der eigentliche Name ist das, was alle Symbole, die den Gegenstand bezeichnen, gemeinsam haben.
+Er würde sich so successive ergeben, dass keinerlei Zusammensetzung für den Namen wesentlich ist.</p>
+<p><strong>3.342</strong>
+An unseren Notationen ist zwar etwas willkürlich, aber  d a s  ist nicht willkürlich: Dass,  w e n n  wir etwas willkürlich bestimmt haben, dann etwas anderes der Fall sein muss.
+(Dies hängt von dem  W e s e n  der Notation ab.)</p>
+<p><strong>3.3421</strong>
+Eine besondere Bezeichnungsweise mag unwichtig sein, aber wichtig ist es immer, dass diese eine  m ö g l i c h e  Bezeichnungsweise ist.
+Und so verhält es sich in der Philosophie überhaupt:
+Das Einzelne erweist sich immer wieder als unwichtig, aber die Möglichkeit jedes Einzelnen gibt uns einen Aufschluss über das Wesen der Welt.</p>
+<p><strong>3.343</strong>
+Definitionen sind Regeln der Übersetzung von einer Sprache in eine andere.
+Jede richtige Zeichensprache muss sich in jede andere nach solchen Regeln übersetzen lassen:  D i e s  ist, was si alle gemeinsam haben.</p>
+<p><strong>3.344</strong>
+Das, was am Symbol bezeichnet, ist das Gemeinsame aller jener Symbole, durch die das erste den Regeln der logischen Syntax zufolge ersetzt werden kann.</p>
+<p><strong>3.3441</strong>
+Man kann z. B. das Gemeinsame aller Notationen für die Wahrheitsfunktionen so auszudrücken: Es ist ihnen gemeinsam, dass sich alle - z. B. - durch die Notation von &quot;\(\neg p\)&quot; (&quot;nicht \(p\)&quot;) und &quot;\(p \land q\)&quot; (&quot;\(p\) oder \(q\)&quot;) e r s e t z e n  l a s s e n.<br />
+(Hiermit ist die Art und Weise gekennzeichnet, wie eine spezielle mögliche Notation uns allgemeine Aufschlüsse geben kann.)</p>
+<p><strong>3.3442</strong>
+Das Zeichen des Komplexes löst sich auch bei der Analyse nicht willkürlich auf, so dass etwa seine Auflösung in jedem Satzgefüge eine andere wäre.</p>
+<p><strong>3.4</strong>
+Der Satz bestimmt einen Ort im logischen Raum.
+Die Existenz dieses logischen Ortes ist durch die Existenz der Bestandteile allein verbürgt, durch die Existenz des sinnvollen Satzes.</p>
+<p><strong>3.41</strong>
+Das Satzzeichen und die logischen Koordinaten: Das ist der logische Ort.</p>
+<p><strong>3.411</strong>
+Der geometrische und der logische Ort stimmen darin überein, dass beide die Möglichkeit einer Existenz sind.</p>
+<p><strong>3.42</strong>
+Obwohl der Satz nur einen Ort des logischen Raumes bestimmen darf, so muss doch durch ihn schon der ganze logische Raum gegeben sein.<br />
+(Sonst würden durch die Verneinung, die logische Summe, das logische Produkt, etc. immer neue Elemente - in Koordination - eingeführt.)<br />
+(Das logische Gerüst um das Bild herum bestimmt den logischen Raum.
+Der Satz durchgreift den ganzen logischen Raum.)</p>
+<p><strong>3.5</strong>
+Das angewandte, gedachte Satzzeichen ist der Gedanke.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="Satz 2.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="Satz 4.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="Satz 2.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="Satz 4.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_line_numbers = true;
+        </script>
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
