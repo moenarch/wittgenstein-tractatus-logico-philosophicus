@@ -1,1 +1,3 @@
-# Satz 7
+# Siebter Satz
+
+Wovon man nicht sprechen kann, darüber muss man schweigen.
