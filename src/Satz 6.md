@@ -1,4 +1,4 @@
-# Sexter Satz
+# Sechster Satz
 
 Die allgemeine Form der Wahrheitsfunktion
 ist: \\([\bar{p}, \bar{\xi}, N(\bar{\xi})]\\).  
@@ -21,9 +21,7 @@ Das ist die allgemeinste Form des Überganges von einem Satz zum anderen.
 **6.02**
 Und s o kommen wir zu den Zahlen: Ich definiere
 
-\\[x = \Omega\^0 ' x, \Omega '\Omega ' x, \Omega '\Omega '\Omega ' x, \dots \\]
-
-\\[x = \Omega^{0} ' x \text{ Def.}\\]
+\\[x = \Omega^0 ' x \text{ Def.}\\]
 
 und
 

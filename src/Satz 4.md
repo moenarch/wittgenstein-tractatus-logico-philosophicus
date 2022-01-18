@@ -304,7 +304,7 @@ So ist der variable Name "\\(x\\)" das eigentliche Zeichen des Scheinbegriffes G
 Wo immer das Wort "Gegenstand" ("Ding", "Sache", etc.) richtig gebraucht wird, wird es in der Begriffsschrift durch den variablen Namen ausgedrückt.  
 Zum Beispiel in dem Satz "es gibt 2 Gegenstände, welche . . . " durch "\\((\exists x, y)\\)...".  
 Wo immer es anders, also als eigentliches Begriffswort gebraucht wird, entstehen unsinnige Scheinsätze.  
-So kann man z. B. nicht sagen "Es gibt Gegenstände", wie man etwa sagt: "Es gibt Bücher". Und ebenso wenig: "Es gibt 100 Gegenstände", oder "Es gibt \\(\Aleph_0\\) Gegenstände".  
+So kann man z. B. nicht sagen "Es gibt Gegenstände", wie man etwa sagt: "Es gibt Bücher". Und ebenso wenig: "Es gibt 100 Gegenstände", oder "Es gibt \\(\aleph_0\\) Gegenstände".  
 Und es ist unsinnig, von der A n z a h l  a l l e r  G e g e n s t ä n d e zu sprechen.  
 Dasselbe gilt von den Worten "Komplex", "Tatsache", "Funktion", "Zahl", etc.  
 Sie alle bezeichnen formale Begriffe und werden in der Begriffsschrift durch Variable, nicht durch Funktionen oder Klassen dargestellt.
